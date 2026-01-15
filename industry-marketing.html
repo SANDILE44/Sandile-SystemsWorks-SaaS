@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marketing Calculators - Sandile SystemsWorks</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/calculators.css">
+</head>
+<body>
+<header>
+  <div class="header-container">
+    <div class="logo">
+      <img src="images/Untitled design.png" alt="Logo" class="logo-img">
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="dashboard.html">Calculators</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="breadcrumb">
+    <a href="dashboard.html">Sectors</a>
+    <span>→</span>
+    <a href="sector-tertiary.html">Tertiary</a>
+    <span>→</span>
+    <span>Marketing</span>
+  </div>
+
+  <h1>Marketing Calculators</h1>
+  <p>Plan campaigns and calculate marketing ROI, client revenue, and expenses.</p>
+
+  <div class="calculator-container">
+    <h2>Marketing Campaign Calculator</h2>
+    <p>Estimate campaign costs, revenue generated, and ROI.</p>
+
+    <div class="calculator-grid">
+      <!-- INPUTS -->
+      <div class="input-section">
+        <h3>Inputs</h3>
+
+        <div class="input-group">
+          <label for="marketing-campaigns">Number of Campaigns</label>
+          <input type="number" id="marketing-campaigns" placeholder="Monthly campaigns">
+        </div>
+
+        <div class="input-group">
+          <label for="marketing-budget">Total Campaign Budget (R)</label>
+          <input type="number" id="marketing-budget" placeholder="Budget per month">
+        </div>
+
+        <div class="input-group">
+          <label for="marketing-revenue">Revenue Generated (R)</label>
+          <input type="number" id="marketing-revenue" placeholder="Revenue from campaigns">
+        </div>
+
+        <div class="input-group">
+          <label for="marketing-staff">Staff Costs (R)</label>
+          <input type="number" id="marketing-staff" placeholder="Monthly salaries">
+        </div>
+
+        <div class="input-group">
+          <label for="marketing-fixed">Fixed Costs (R)</label>
+          <input type="number" id="marketing-fixed" placeholder="Rent, utilities, licenses">
+        </div>
+
+        <div class="input-group">
+          <label for="marketing-variable">Variable Costs (R)</label>
+          <input type="number" id="marketing-variable" placeholder="Advertising, creatives, platforms">
+        </div>
+
+        <button id="resetBtn">Reset</button>
+      </div>
+
+      <!-- OUTPUTS -->
+      <div class="output-section">
+        <h3>Results</h3>
+
+        <div class="output-group">
+          <div class="output-label">Total Revenue</div>
+          <div class="output-value" id="marketing-total-revenue">R0.00</div>
+        </div>
+
+        <div class="output-group">
+          <div class="output-label">Total Costs</div>
+          <div class="output-value" id="marketing-total-costs">R0.00</div>
+        </div>
+
+        <div class="output-group">
+          <div class="output-label">Profit / Loss</div>
+          <div class="output-value" id="marketing-profit">R0.00</div>
+        </div>
+
+        <div class="output-group">
+          <div class="output-label">Revenue Per Campaign</div>
+          <div class="output-value" id="marketing-revenue-per-campaign">R0.00</div>
+        </div>
+
+        <div class="output-group">
+          <div class="output-label">Cost Per Campaign</div>
+          <div class="output-value" id="marketing-cost-per-campaign">R0.00</div>
+        </div>
+
+        <div class="output-group">
+          <div class="output-label">ROI (%)</div>
+          <div class="output-value" id="marketing-roi">0.00%</div>
+        </div>
+
+        <div class="output-group">
+          <div class="output-label">Profit Margin (%)</div>
+          <div class="output-value" id="marketing-margin">0.00%</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-container">
+    
+    <div class="footer-about">
+      <div class="logo">
+        <img src="images/Untitled design.png" alt="Logo" class="logo-img">
+      </div>
+      <h3>Sandile SystemsWorks</h3>
+      <p>Professional business solutions and calculators for all sectors. We also provide <strong>web development, systems suites, and SaaS tools</strong> to help your business grow.</p>
+    </div>
+
+    <div class="footer-contact">
+      <h4>Contact Us</h4>
+      <p>Email: <a href="mailto:thabethesandile44@gmail.com">thabethesandile44@gmail.com</a></p>
+      <p>Phone: <a href="tel:+27717378540">071 737 8540</a></p>
+    </div>
+
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <a href="index.html">Home</a><br>
+      <a href="about.html">About</a><br>
+      <a href="dashboard.html">Calculators</a><br>
+    </div>
+
+    <div class="footer-copy">
+      <p>&copy; 2026 Sandile SystemsWorks. All rights reserved.</p>
+    </div>
+
+  </div>
+</footer>
+
+<script>
+  // Helpers
+  function formatCurrency(value) {
+    return 'R' + Number(value).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  }
+
+  function formatPercentage(value) {
+    return Number(value).toFixed(2) + '%';
+  }
+
+  // Marketing Calculator
+  class MarketingCalculator {
+    calculateFromInputs(campaigns, budget, revenue, staff, fixed, variable) {
+      campaigns = parseFloat(campaigns) || 0;
+      budget = parseFloat(budget) || 0;
+      revenue = parseFloat(revenue) || 0;
+      staff = parseFloat(staff) || 0;
+      fixed = parseFloat(fixed) || 0;
+      variable = parseFloat(variable) || 0;
+
+      const totalRevenue = revenue;
+      const totalCosts = staff + fixed + variable + budget;
+      const profitLoss = totalRevenue - totalCosts;
+      const revenuePerCampaign = campaigns ? totalRevenue / campaigns : 0;
+      const costPerCampaign = campaigns ? totalCosts / campaigns : 0;
+      const roi = totalCosts ? (profitLoss / totalCosts) * 100 : 0;
+      const margin = totalRevenue ? (profitLoss / totalRevenue) * 100 : 0;
+
+      return { totalRevenue, totalCosts, profitLoss, revenuePerCampaign, costPerCampaign, roi, margin };
+    }
+  }
+
+  const marketingCalc = new MarketingCalculator();
+  const marketingInputs = [
+    'marketing-campaigns', 
+    'marketing-budget', 
+    'marketing-revenue', 
+    'marketing-staff', 
+    'marketing-fixed', 
+    'marketing-variable'
+  ];
+
+  marketingInputs.forEach(id => {
+    document.getElementById(id).addEventListener('input', updateMarketingCalculator);
+  });
+
+  function updateMarketingCalculator() {
+    const result = marketingCalc.calculateFromInputs(
+      document.getElementById('marketing-campaigns').value,
+      document.getElementById('marketing-budget').value,
+      document.getElementById('marketing-revenue').value,
+      document.getElementById('marketing-staff').value,
+      document.getElementById('marketing-fixed').value,
+      document.getElementById('marketing-variable').value
+    );
+
+    document.getElementById('marketing-total-revenue').textContent = formatCurrency(result.totalRevenue);
+    document.getElementById('marketing-total-costs').textContent = formatCurrency(result.totalCosts);
+
+    const profitEl = document.getElementById('marketing-profit');
+    profitEl.textContent = formatCurrency(result.profitLoss);
+    profitEl.className = 'output-value ' + (result.profitLoss >= 0 ? 'positive' : 'negative');
+
+    document.getElementById('marketing-revenue-per-campaign').textContent = formatCurrency(result.revenuePerCampaign);
+    document.getElementById('marketing-cost-per-campaign').textContent = formatCurrency(result.costPerCampaign);
+    document.getElementById('marketing-roi').textContent = formatPercentage(result.roi);
+    document.getElementById('marketing-margin').textContent = formatPercentage(result.margin);
+  }
+
+  // Reset button
+  document.getElementById('resetBtn').addEventListener('click', () => {
+    marketingInputs.forEach(id => document.getElementById(id).value = '');
+    updateMarketingCalculator();
+  });
+
+  // Initialize
+  updateMarketingCalculator();
+</script>
+</body>
+</html>

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Logistics Calculators - Sandile SystemsWorks</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/calculators.css">
+</head>
+<body>
+<header>
+  <div class="header-container">
+    <div class="logo">
+      <img src="images/Untitled design.png" alt="Logo" class="logo-img">
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="dashboard.html">Calculators</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="breadcrumb">
+    <a href="dashboard.html">Sectors</a>
+    <span>→</span>
+    <a href="sector-tertiary.html">Tertiary</a>
+    <span>→</span>
+    <span>Logistics</span>
+  </div>
+
+  <h1>Logistics Calculators</h1>
+  <p>Optimize shipping operations and transportation profitability.</p>
+
+  <div class="calculator-container">
+    <h2>Logistics Operations Calculator</h2>
+    <p>Analyze shipment profitability, cost per shipment, and operational efficiency.</p>
+
+    <div class="calculator-grid">
+
+      <!-- INPUTS -->
+      <div class="input-section">
+        <h3>Inputs</h3>
+
+        <div class="input-group">
+          <label for="log-shipments">Shipments Per Month</label>
+          <input type="number" id="log-shipments" placeholder="Enter number of shipments" >
+        </div>
+
+        <div class="input-group">
+          <label for="log-revenue">Revenue Per Shipment (R)</label>
+          <input type="number" id="log-revenue" placeholder="Average charge per shipment" >
+        </div>
+
+        <div class="input-group">
+          <label for="log-fuel">Fuel Costs (R)</label>
+          <input type="number" id="log-fuel" placeholder="Monthly fuel expenses" >
+        </div>
+
+        <div class="input-group">
+          <label for="log-labor">Labor Costs (R)</label>
+          <input type="number" id="log-labor" placeholder="Driver and staff wages">
+        </div>
+
+        <div class="input-group">
+          <label for="log-maintenance">Vehicle Maintenance (R)</label>
+          <input type="number" id="log-maintenance" placeholder="Monthly vehicle upkeep" >
+        </div>
+
+        <div class="input-group">
+          <label for="log-fixed">Fixed Costs (R)</label>
+          <input type="number" id="log-fixed" placeholder="Facility, insurance, permits">
+        </div>
+
+        <button type="button" id="resetBtn">Reset All</button>
+      </div>
+
+      <!-- OUTPUTS -->
+      <div class="output-section">
+        <h3>Results</h3>
+
+        <div class="output-group"><div class="output-label">Monthly Shipments</div><div class="output-value" id="log-shipments-output">0</div></div>
+        <div class="output-group"><div class="output-label">Total Revenue</div><div class="output-value" id="log-total-revenue">R0.00</div></div>
+        <div class="output-group"><div class="output-label">Total Costs</div><div class="output-value" id="log-total-costs">R0.00</div></div>
+        <div class="output-group"><div class="output-label">Net Profit</div><div class="output-value" id="log-profit">R0.00</div></div>
+        <div class="output-group"><div class="output-label">Cost Per Shipment</div><div class="output-value" id="log-per-shipment">R0.00</div></div>
+        <div class="output-group"><div class="output-label">Revenue Per Shipment</div><div class="output-value" id="log-revenue-per-shipment">R0.00</div></div>
+        <div class="output-group"><div class="output-label">ROI (%)</div><div class="output-value" id="log-roi">0.00%</div></div>
+        <div class="output-group"><div class="output-label">Profit Margin (%)</div><div class="output-value" id="log-margin">0.00%</div></div>
+
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-container">
+    
+    <div class="footer-about">
+      <div class="logo">
+        <img src="images/Untitled design.png" alt="Logo" class="logo-img">
+      </div>
+      <h3>Sandile SystemsWorks</h3>
+      <p>Professional business solutions and calculators for all sectors. We also provide <strong>web development, systems suites, and SaaS tools</strong> to help your business grow.</p>
+    </div>
+
+    <div class="footer-contact">
+      <h4>Contact Us</h4>
+      <p>Email: <a href="mailto:thabethesandile44@gmail.com">thabethesandile44@gmail.com</a></p>
+      <p>Phone: <a href="tel:+27717378540">071 737 8540</a></p>
+    </div>
+
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <a href="index.html">Home</a><br>
+      <a href="about.html">About</a><br>
+      <a href="dashboard.html">Calculators</a><br>
+    </div>
+
+    <div class="footer-copy">
+      <p>&copy; 2026 Sandile SystemsWorks. All rights reserved.</p>
+    </div>
+
+  </div>
+</footer>
+<script>
+  class LogisticsCalculator {
+    calculateFromInputs(shipments, revenuePerShipment, fuel, labor, maintenance, fixed) {
+      shipments = parseFloat(shipments) || 0;
+      revenuePerShipment = parseFloat(revenuePerShipment) || 0;
+      fuel = parseFloat(fuel) || 0;
+      labor = parseFloat(labor) || 0;
+      maintenance = parseFloat(maintenance) || 0;
+      fixed = parseFloat(fixed) || 0;
+
+      const totalRevenue = shipments * revenuePerShipment;
+      const totalCosts = fuel + labor + maintenance + fixed;
+      const netProfit = totalRevenue - totalCosts;
+      const costPerShipment = shipments ? totalCosts / shipments : 0;
+      const revenuePerShipmentCalc = shipments ? totalRevenue / shipments : 0;
+      const profitMargin = totalRevenue ? (netProfit / totalRevenue) * 100 : 0;
+      const roi = totalCosts ? (netProfit / totalCosts) * 100 : 0;
+
+      return { shipments, totalRevenue, totalCosts, netProfit, costPerShipment, revenuePerShipment: revenuePerShipmentCalc, profitMargin, roi };
+    }
+  }
+
+  function formatCurrency(v) { return 'R'+Number(v).toLocaleString(undefined,{minimumFractionDigits:2, maximumFractionDigits:2}) }
+  function formatPercentage(v) { return Number(v).toFixed(2)+'%' }
+
+  const logCalc = new LogisticsCalculator();
+  const inputs = ['log-shipments','log-revenue','log-fuel','log-labor','log-maintenance','log-fixed'];
+
+  inputs.forEach(id => document.getElementById(id).addEventListener('input', updateLogCalculator));
+
+  function updateLogCalculator() {
+    const result = logCalc.calculateFromInputs(
+      document.getElementById('log-shipments').value,
+      document.getElementById('log-revenue').value,
+      document.getElementById('log-fuel').value,
+      document.getElementById('log-labor').value,
+      document.getElementById('log-maintenance').value,
+      document.getElementById('log-fixed').value
+    );
+
+    document.getElementById('log-shipments-output').textContent = result.shipments.toFixed(0);
+    document.getElementById('log-total-revenue').textContent = formatCurrency(result.totalRevenue);
+    document.getElementById('log-total-costs').textContent = formatCurrency(result.totalCosts);
+
+    const profitEl = document.getElementById('log-profit');
+    profitEl.textContent = formatCurrency(result.netProfit);
+    profitEl.className = 'output-value '+(result.netProfit>=0?'positive':'negative');
+
+    document.getElementById('log-per-shipment').textContent = formatCurrency(result.costPerShipment);
+    document.getElementById('log-revenue-per-shipment').textContent = formatCurrency(result.revenuePerShipment);
+    document.getElementById('log-roi').textContent = formatPercentage(result.roi);
+    document.getElementById('log-margin').textContent = formatPercentage(result.profitMargin);
+  }
+
+  // Reset button
+  document.getElementById('resetBtn').addEventListener('click', () => {
+    document.getElementById('log-shipments').value = 100;
+    document.getElementById('log-revenue').value = 2000;
+    document.getElementById('log-fuel').value = 15000;
+    document.getElementById('log-labor').value = 20000;
+    document.getElementById('log-maintenance').value = 5000;
+    document.getElementById('log-fixed').value = 10000;
+    updateLogCalculator();
+  });
+
+  // Initialize default calculation
+  updateLogCalculator();
+</script>
+</body>
+</html>

@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Construction Calculators - Sandile SystemsWorks</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/calculators.css">
+</head>
+<body>
+  <!-- HEADER -->
+<header>
+  <div class="header-container">
+    <div class="logo">
+      <img src="images/Untitled design.png" alt="Logo" class="logo-img">
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="dashboard.html">Calculators</a>
+      <button id="logoutBtn">Logout</button>
+    </nav>
+  </div>
+</header>
+
+  <!-- MAIN CONTENT -->
+<main>
+  <div class="breadcrumb">
+    <a href="index.html">Sectors</a>
+    <span>→</span>
+    <a href="sector-secondary.html">Secondary</a>
+    <span>→</span>
+    <span>Construction</span>
+  </div>
+
+  <h1>Construction Calculators</h1>
+  <p>Project costing and construction profitability analysis.</p>
+
+  <!-- CONSTRUCTION CALCULATOR -->
+  <div class="calculator-container">
+    <h2>Construction Project Cost Calculator</h2>
+    <p>Calculate project profitability and cost management for construction contracts.</p>
+
+    <div class="calculator-grid">
+      <!-- INPUTS -->
+      <div class="input-section">
+        <h3>Inputs</h3>
+
+        <div class="input-group">
+          <label for="const-value">Project Contract Value (R)</label>
+          <input type="number" id="const-value" placeholder="Total project revenue" min="0">
+        </div>
+        <div class="input-group">
+          <label for="const-material">Material Costs (R)</label>
+          <input type="number" id="const-material" placeholder="Concrete, steel, etc." min="0">
+        </div>
+        <div class="input-group">
+          <label for="const-labor">Labor Costs (R)</label>
+          <input type="number" id="const-labor" placeholder="Worker wages and salaries" min="0">
+        </div>
+        <div class="input-group">
+          <label for="const-equipment">Equipment & Machinery Costs (R)</label>
+          <input type="number" id="const-equipment" placeholder="Rental and operation" min="0">
+        </div>
+        <div class="input-group">
+          <label for="const-fixed">Fixed Costs (R)</label>
+          <input type="number" id="const-fixed" placeholder="Office, permits, insurance" min="0">
+        </div>
+        <button type="button" id="resetBtn">Reset All</button>
+      </div>
+
+      <!-- OUTPUTS -->
+      <div class="output-section">
+        <h3>Results</h3>
+
+        <div class="output-group">
+          <div class="output-label">Project Value</div>
+          <div class="output-value" id="const-project-value">R0.00</div>
+        </div>
+
+        <div class="output-group">
+          <div class="output-label">Material Costs</div>
+          <div class="output-value" id="const-material-output">R0.00</div>
+        </div>
+
+        <div class="output-group">
+          <div class="output-label">Labor Costs</div>
+          <div class="output-value" id="const-labor-output">R0.00</div>
+        </div>
+
+        <div class="output-group">
+          <div class="output-label">Equipment Costs</div>
+          <div class="output-value" id="const-equipment-output">R0.00</div>
+        </div>
+
+        <div class="output-group">
+          <div class="output-label">Fixed Costs</div>
+          <div class="output-value" id="const-fixed-output">R0.00</div>
+        </div>
+
+        <div class="output-group">
+          <div class="output-label">Total Costs</div>
+          <div class="output-value" id="const-total-costs">R0.00</div>
+        </div>
+
+        <div class="output-group">
+          <div class="output-label">Profit / Loss</div>
+          <div class="output-value" id="const-profit">R0.00</div>
+        </div>
+
+        <div class="output-group">
+          <div class="output-label">Profit Margin (%)</div>
+          <div class="output-value" id="const-margin">0.00%</div>
+        </div>
+
+        <div class="output-group">
+          <div class="output-label">ROI (%)</div>
+          <div class="output-value" id="const-roi">0.00%</div>
+        </div>
+
+        <div class="output-group">
+          <div class="output-label">Cost Ratio (% of Revenue)</div>
+          <div class="output-value" id="const-ratio">0.00%</div>
+        </div>
+
+        <div class="output-group">
+          <div class="output-label">Break-even Revenue</div>
+          <div class="output-value" id="const-breakeven">R0.00</div>
+        </div>
+
+        <!-- Advanced metrics -->
+        <div class="output-group">
+          <div class="output-label">Profit per R1 Material</div>
+          <div class="output-value" id="const-profit-material">R0.00</div>
+        </div>
+
+        <div class="output-group">
+          <div class="output-label">Profit per R1 Labor</div>
+          <div class="output-value" id="const-profit-labor">R0.00</div>
+        </div>
+
+        <div class="output-group">
+          <div class="output-label">Profit per R1 Equipment</div>
+          <div class="output-value" id="const-profit-equipment">R0.00</div>
+        </div>
+
+        <div class="output-group">
+          <div class="output-label">Monthly Profit Projection</div>
+          <div class="output-value" id="const-monthly-profit">R0.00</div>
+        </div>
+
+        <div class="output-group">
+          <div class="output-label">Annual Profit Projection</div>
+          <div class="output-value" id="const-annual-profit">R0.00</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-container">
+    
+    <div class="footer-about">
+      <div class="logo">
+        <img src="images/Untitled design.png" alt="Logo" class="logo-img">
+      </div>
+      <h3>Sandile SystemsWorks</h3>
+      <p>Professional business solutions and calculators for all sectors. We also provide <strong>web development, systems suites, and SaaS tools</strong> to help your business grow.</p>
+    </div>
+
+    <div class="footer-contact">
+      <h4>Contact Us</h4>
+      <p>Email: <a href="mailto:thabethesandile44@gmail.com">thabethesandile44@gmail.com</a></p>
+      <p>Phone: <a href="tel:+27717378540">071 737 8540</a></p>
+    </div>
+
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <a href="index.html">Home</a><br>
+      <a href="about.html">About</a><br>
+      <a href="dashboard.html">Calculators</a><br>
+    </div>
+
+    <div class="footer-copy">
+      <p>&copy; 2026 Sandile SystemsWorks. All rights reserved.</p>
+    </div>
+
+  </div>
+</footer>
+
+<script>
+  // Helper functions
+  function formatCurrency(value) {
+    return "R" + Number(value).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  }
+  function formatPercentage(value) {
+    return Number(value).toFixed(2) + "%";
+  }
+
+  // Construction Calculator Class
+  class ConstructionProjectCalculator {
+    calculateFromInputs(value, material, labor, equipment, fixed) {
+      value = Number(value) || 0;
+      material = Number(material) || 0;
+      labor = Number(labor) || 0;
+      equipment = Number(equipment) || 0;
+      fixed = Number(fixed) || 0;
+
+      const totalCosts = material + labor + equipment + fixed;
+      const profitLoss = value - totalCosts;
+      const margin = value ? (profitLoss / value) * 100 : 0;
+      const roi = totalCosts ? (profitLoss / totalCosts) * 100 : 0;
+      const costRatio = value ? (totalCosts / value) * 100 : 0;
+      const breakEven = totalCosts;
+
+      // Advanced metrics
+      const profitMaterial = material ? profitLoss / material : 0;
+      const profitLabor = labor ? profitLoss / labor : 0;
+      const profitEquipment = equipment ? profitLoss / equipment : 0;
+      const monthlyProfit = profitLoss; // assuming 1 project/month
+      const annualProfit = profitLoss * 12;
+
+      return {
+        projectValue: value,
+        material,
+        labor,
+        equipment,
+        fixed,
+        totalCosts,
+        profitLoss,
+        margin,
+        roi,
+        costRatio,
+        breakEven,
+        profitMaterial,
+        profitLabor,
+        profitEquipment,
+        monthlyProfit,
+        annualProfit
+      };
+    }
+  }
+
+  const constCalc = new ConstructionProjectCalculator();
+  const constInputs = ['const-value','const-material','const-labor','const-equipment','const-fixed'];
+
+  constInputs.forEach(id => {
+    document.getElementById(id).addEventListener('input', updateConstCalculator);
+  });
+
+  function updateConstCalculator() {
+    const result = constCalc.calculateFromInputs(
+      document.getElementById('const-value').value,
+      document.getElementById('const-material').value,
+      document.getElementById('const-labor').value,
+      document.getElementById('const-equipment').value,
+      document.getElementById('const-fixed').value
+    );
+
+    document.getElementById('const-project-value').textContent = formatCurrency(result.projectValue);
+    document.getElementById('const-material-output').textContent = formatCurrency(result.material);
+    document.getElementById('const-labor-output').textContent = formatCurrency(result.labor);
+    document.getElementById('const-equipment-output').textContent = formatCurrency(result.equipment);
+    document.getElementById('const-fixed-output').textContent = formatCurrency(result.fixed);
+    document.getElementById('const-total-costs').textContent = formatCurrency(result.totalCosts);
+
+    const profitEl = document.getElementById('const-profit');
+    profitEl.textContent = formatCurrency(result.profitLoss);
+    profitEl.className = 'output-value ' + (result.profitLoss >= 0 ? 'positive' : 'negative');
+
+    document.getElementById('const-margin').textContent = formatPercentage(result.margin);
+    document.getElementById('const-roi').textContent = formatPercentage(result.roi);
+    document.getElementById('const-ratio').textContent = formatPercentage(result.costRatio);
+    document.getElementById('const-breakeven').textContent = formatCurrency(result.breakEven);
+
+    // Advanced metrics
+    document.getElementById('const-profit-material').textContent = formatCurrency(result.profitMaterial);
+    document.getElementById('const-profit-labor').textContent = formatCurrency(result.profitLabor);
+    document.getElementById('const-profit-equipment').textContent = formatCurrency(result.profitEquipment);
+    document.getElementById('const-monthly-profit').textContent = formatCurrency(result.monthlyProfit);
+    document.getElementById('const-annual-profit').textContent = formatCurrency(result.annualProfit);
+  }
+
+  // Reset button
+  document.getElementById('resetBtn').addEventListener('click', () => {
+    constInputs.forEach(id => document.getElementById(id).value = '');
+    updateConstCalculator();
+  });
+
+  // Initialize
+  updateConstCalculator();
+</script>
+</body>
+</html>

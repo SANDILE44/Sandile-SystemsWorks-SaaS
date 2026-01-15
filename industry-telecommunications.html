@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Telecommunications Calculators - Sandile SystemsWorks</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/calculators.css">
+</head>
+<body>
+
+<header>
+  <div class="header-container">
+    <div class="logo">
+      <img src="images/Untitled design.png" alt="Logo" class="logo-img">
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="dashboard.html">Calculators</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="breadcrumb">
+    <a href="dashboard.html">Sectors</a>
+    <span>→</span>
+    <a href="sector-quaternary.html">Quaternary</a>
+    <span>→</span>
+    <span>Telecommunications</span>
+  </div>
+
+  <h1>Telecommunications Calculators</h1>
+  <p>Analyze telecom service profitability and network infrastructure costs.</p>
+
+  <div class="calculator-container">
+    <h2>Telecom Service Profitability Calculator</h2>
+    <p>Calculate revenue, costs, and profitability for your telecom services.</p>
+
+    <div class="calculator-grid">
+
+      <!-- INPUTS -->
+      <div class="input-section">
+        <h3>Inputs</h3>
+        <div class="input-group">
+          <label for="telecom-subscribers">Number of Subscribers</label>
+          <input type="number" id="telecom-subscribers" placeholder="Total subscribers">
+        </div>
+        <div class="input-group">
+          <label for="telecom-price">Revenue per Subscriber (R)</label>
+          <input type="number" id="telecom-price" placeholder="Charge per subscriber">
+        </div>
+        <div class="input-group">
+          <label for="telecom-infra">Infrastructure Cost (R)</label>
+          <input type="number" id="telecom-infra" placeholder="Network, towers, servers">
+        </div>
+        <div class="input-group">
+          <label for="telecom-labor">Labor Costs (R)</label>
+          <input type="number" id="telecom-labor" placeholder="Staff salaries">
+        </div>
+        <div class="input-group">
+          <label for="telecom-operational">Operational Costs (R)</label>
+          <input type="number" id="telecom-operational" placeholder="Maintenance, utilities">
+        </div>
+      </div>
+
+      <!-- OUTPUTS -->
+      <div class="output-section">
+        <h3>Results</h3>
+
+        <div class="output-group">
+          <div class="output-label">Total Subscribers</div>
+          <div class="output-value" id="telecom-subscribers-output">0</div>
+        </div>
+
+        <div class="output-group">
+          <div class="output-label">Total Revenue</div>
+          <div class="output-value" id="telecom-revenue">R0.00</div>
+        </div>
+
+        <div class="output-group">
+          <div class="output-label">Infrastructure Costs</div>
+          <div class="output-value" id="telecom-infra-output">R0.00</div>
+        </div>
+
+        <div class="output-group">
+          <div class="output-label">Labor Costs</div>
+          <div class="output-value" id="telecom-labor-output">R0.00</div>
+        </div>
+
+        <div class="output-group">
+          <div class="output-label">Operational Costs</div>
+          <div class="output-value" id="telecom-operational-output">R0.00</div>
+        </div>
+
+        <div class="output-group">
+          <div class="output-label">Total Costs</div>
+          <div class="output-value" id="telecom-total-costs">R0.00</div>
+        </div>
+
+        <div class="output-group">
+          <div class="output-label">Net Profit</div>
+          <div class="output-value" id="telecom-net-profit">R0.00</div>
+        </div>
+
+        <div class="output-group">
+          <div class="output-label">Profit Margin (%)</div>
+          <div class="output-value" id="telecom-margin">0.00%</div>
+        </div>
+
+        <div class="output-group">
+          <div class="output-label">ROI (%)</div>
+          <div class="output-value" id="telecom-roi">0.00%</div>
+        </div>
+
+        <div class="output-group">
+          <div class="output-label">Monthly Profit</div>
+          <div class="output-value" id="telecom-monthly">R0.00</div>
+        </div>
+
+        <div class="output-group">
+          <div class="output-label">Annualized Profit</div>
+          <div class="output-value" id="telecom-annualized">R0.00</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-container">
+    
+    <div class="footer-about">
+      <div class="logo">
+        <img src="images/Untitled design.png" alt="Logo" class="logo-img">
+      </div>
+      <h3>Sandile SystemsWorks</h3>
+      <p>Professional business solutions and calculators for all sectors. We also provide <strong>web development, systems suites, and SaaS tools</strong> to help your business grow.</p>
+    </div>
+
+    <div class="footer-contact">
+      <h4>Contact Us</h4>
+      <p>Email: <a href="mailto:thabethesandile44@gmail.com">thabethesandile44@gmail.com</a></p>
+      <p>Phone: <a href="tel:+27717378540">071 737 8540</a></p>
+    </div>
+
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <a href="index.html">Home</a><br>
+      <a href="about.html">About</a><br>
+      <a href="dashboard.html">Calculators</a><br>
+    </div>
+
+    <div class="footer-copy">
+      <p>&copy; 2026 Sandile SystemsWorks. All rights reserved.</p>
+    </div>
+
+  </div>
+</footer>
+
+<script>
+  // Helper functions
+  function formatCurrency(value) {
+    return 'R' + Number(value).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  }
+
+  function formatPercentage(value) {
+    return Number(value).toFixed(2) + '%';
+  }
+
+  // Telecom Calculator Class
+  class TelecomCalculator {
+    calculate(subscribers, price, infra, labor, operational) {
+      subscribers = parseFloat(subscribers) || 0;
+      price = parseFloat(price) || 0;
+      infra = parseFloat(infra) || 0;
+      labor = parseFloat(labor) || 0;
+      operational = parseFloat(operational) || 0;
+
+      const totalRevenue = subscribers * price;
+      const totalCosts = infra + labor + operational;
+      const netProfit = totalRevenue - totalCosts;
+      const profitMargin = totalRevenue ? (netProfit / totalRevenue) * 100 : 0;
+      const roi = totalCosts ? (netProfit / totalCosts) * 100 : 0;
+      const monthly = netProfit / 12;
+      const annualized = netProfit;
+
+      return { subscribers, totalRevenue, infra, labor, operational, totalCosts, netProfit, profitMargin, roi, monthly, annualized };
+    }
+  }
+
+  const telecomCalc = new TelecomCalculator();
+  const inputs = ['telecom-subscribers', 'telecom-price', 'telecom-infra', 'telecom-labor', 'telecom-operational'];
+
+  inputs.forEach(id => {
+    document.getElementById(id).addEventListener('input', updateCalculator);
+  });
+
+  function updateCalculator() {
+    const result = telecomCalc.calculate(
+      document.getElementById('telecom-subscribers').value,
+      document.getElementById('telecom-price').value,
+      document.getElementById('telecom-infra').value,
+      document.getElementById('telecom-labor').value,
+      document.getElementById('telecom-operational').value
+    );
+
+    document.getElementById('telecom-subscribers-output').textContent = result.subscribers.toFixed(0);
+    document.getElementById('telecom-revenue').textContent = formatCurrency(result.totalRevenue);
+    document.getElementById('telecom-infra-output').textContent = formatCurrency(result.infra);
+    document.getElementById('telecom-labor-output').textContent = formatCurrency(result.labor);
+    document.getElementById('telecom-operational-output').textContent = formatCurrency(result.operational);
+    document.getElementById('telecom-total-costs').textContent = formatCurrency(result.totalCosts);
+
+    const netEl = document.getElementById('telecom-net-profit');
+    netEl.textContent = formatCurrency(result.netProfit);
+    netEl.className = 'output-value ' + (result.netProfit >= 0 ? 'positive' : 'negative');
+
+    document.getElementById('telecom-margin').textContent = formatPercentage(result.profitMargin);
+    document.getElementById('telecom-roi').textContent = formatPercentage(result.roi);
+
+    document.getElementById('telecom-monthly').textContent = formatCurrency(result.monthly);
+    document.getElementById('telecom-annualized').textContent = formatCurrency(result.annualized);
+  }
+
+  // Initialize calculation
+  updateCalculator();
+</script>
+
+</body>
+</html>
