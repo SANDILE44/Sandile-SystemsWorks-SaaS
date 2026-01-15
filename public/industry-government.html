@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Government Planning Calculators - Sandile SystemsWorks</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/calculators.css">
+</head>
+<body>
+
+<header>
+  <div class="header-container">
+    <div class="logo">
+      <img src="images/Untitled design.png" alt="Logo" class="logo-img">
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="dashboard.html">Calculators</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="breadcrumb">
+    <a href="dashboard.html">Sectors</a>
+    <span>→</span>
+    <a href="sector-quinary.html">Quinary</a>
+    <span>→</span>
+    <span>Government</span>
+  </div>
+
+  <h1>Government Planning & Budgeting Tools</h1>
+  <p>Decision-support tools for public sector budgeting, program costing, and resource allocation.</p>
+
+  <div class="calculator-container">
+    <h2>Public Program Budget & Costing Calculator</h2>
+    <p>Analyze program feasibility, budget efficiency, and cost per beneficiary.</p>
+
+    <div class="calculator-grid">
+
+      <!-- INPUTS -->
+      <div class="input-section">
+        <h3>Inputs</h3>
+
+        <div class="input-group">
+          <label for="gov-budget">Total Approved Budget (R)</label>
+          <input type="number" id="gov-budget" placeholder="Enter total budget" >
+        </div>
+
+        <div class="input-group">
+          <label for="gov-staff">Staff & Personnel Costs (R)</label>
+          <input type="number" id="gov-staff" placeholder="Salaries & wages" >
+        </div>
+
+        <div class="input-group">
+          <label for="gov-operations">Operational Costs (R)</label>
+          <input type="number" id="gov-operations" placeholder="Utilities, supplies, etc." >
+        </div>
+
+        <div class="input-group">
+          <label for="gov-infrastructure">Infrastructure & Assets (R)</label>
+          <input type="number" id="gov-infrastructure" placeholder="Buildings, equipment" >
+        </div>
+
+        <div class="input-group">
+          <label for="gov-beneficiaries">Number of Beneficiaries</label>
+          <input type="number" id="gov-beneficiaries" placeholder="Total people served" >
+        </div>
+      </div>
+
+      <!-- OUTPUTS -->
+      <div class="output-section">
+        <h3>Results</h3>
+
+        <div class="output-group">
+          <div class="output-label">Total Program Cost</div>
+          <div class="output-value" id="gov-total-cost">R0.00</div>
+        </div>
+
+        <div class="output-group">
+          <div class="output-label">Budget Balance</div>
+          <div class="output-value" id="gov-balance">R0.00</div>
+        </div>
+
+        <div class="output-group">
+          <div class="output-label">Cost Per Beneficiary</div>
+          <div class="output-value" id="gov-per-beneficiary">R0.00</div>
+        </div>
+
+        <div class="output-group">
+          <div class="output-label">Budget Utilisation (%)</div>
+          <div class="output-value" id="gov-utilisation">0.00%</div>
+        </div>
+
+        <div class="output-group">
+          <div class="output-label">Program Feasibility</div>
+          <div class="output-value" id="gov-feasibility">—</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-container">
+    
+    <div class="footer-about">
+      <div class="logo">
+        <img src="images/Untitled design.png" alt="Logo" class="logo-img">
+      </div>
+      <h3>Sandile SystemsWorks</h3>
+      <p>Professional business solutions and calculators for all sectors. We also provide <strong>web development, systems suites, and SaaS tools</strong> to help your business grow.</p>
+    </div>
+
+    <div class="footer-contact">
+      <h4>Contact Us</h4>
+      <p>Email: <a href="mailto:thabethesandile44@gmail.com">thabethesandile44@gmail.com</a></p>
+      <p>Phone: <a href="tel:+27717378540">071 737 8540</a></p>
+    </div>
+
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <a href="index.html">Home</a><br>
+      <a href="about.html">About</a><br>
+      <a href="dashboard.html">Calculators</a><br>
+    </div>
+
+    <div class="footer-copy">
+      <p>&copy; 2026 Sandile SystemsWorks. All rights reserved.</p>
+    </div>
+
+  </div>
+</footer>
+
+<script>
+  // Formatter helpers
+  function formatCurrency(value) {
+    return 'R' + Number(value).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  }
+
+  function formatPercentage(value) {
+    return Number(value).toFixed(2) + '%';
+  }
+
+  // Calculator logic
+  class GovernmentCalculator {
+    calculate(budget, staff, operations, infra, beneficiaries) {
+      budget = parseFloat(budget) || 0;
+      staff = parseFloat(staff) || 0;
+      operations = parseFloat(operations) || 0;
+      infra = parseFloat(infra) || 0;
+      beneficiaries = parseFloat(beneficiaries) || 0;
+
+      const totalCost = staff + operations + infra;
+      const balance = budget - totalCost;
+      const costPerBeneficiary = beneficiaries > 0 ? totalCost / beneficiaries : 0;
+      const utilisation = budget > 0 ? (totalCost / budget) * 100 : 0;
+      const feasibility = balance >= 0 ? 'Within Budget ✅' : 'Over Budget ⚠️';
+
+      return { totalCost, balance, costPerBeneficiary, utilisation, feasibility };
+    }
+  }
+
+  const govCalc = new GovernmentCalculator();
+
+  const inputs = ['gov-budget','gov-staff','gov-operations','gov-infrastructure','gov-beneficiaries'];
+
+  inputs.forEach(id => document.getElementById(id).addEventListener('input', updateGovCalculator));
+
+  function updateGovCalculator() {
+    const result = govCalc.calculate(
+      document.getElementById('gov-budget').value,
+      document.getElementById('gov-staff').value,
+      document.getElementById('gov-operations').value,
+      document.getElementById('gov-infrastructure').value,
+      document.getElementById('gov-beneficiaries').value
+    );
+
+    document.getElementById('gov-total-cost').textContent = formatCurrency(result.totalCost);
+
+    const balanceEl = document.getElementById('gov-balance');
+    balanceEl.textContent = formatCurrency(result.balance);
+    balanceEl.className = 'output-value ' + (result.balance >= 0 ? 'positive' : 'negative');
+
+    document.getElementById('gov-per-beneficiary').textContent = formatCurrency(result.costPerBeneficiary);
+    document.getElementById('gov-utilisation').textContent = formatPercentage(result.utilisation);
+    document.getElementById('gov-feasibility').textContent = result.feasibility;
+  }
+
+  // Initialize calculator
+  updateGovCalculator();
+</script>
+
+</body>
+</html>

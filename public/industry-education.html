@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Education Calculators - Sandile SystemsWorks</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/calculators.css">
+</head>
+<body>
+<header>
+  <div class="header-container">
+    <div class="logo">
+      <img src="images/Untitled design.png" alt="Logo" class="logo-img">
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="dashboard.html">Calculators</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="breadcrumb">
+    <a href="dashboard.html">Sectors</a>
+    <span>→</span>
+    <a href="sector-tertiary.html">Tertiary</a>
+    <span>→</span>
+    <span>Education</span>
+  </div>
+
+  <h1>Education Calculators</h1>
+  <p>Analyze school operations and tuition revenue models.</p>
+
+  <div class="calculator-container">
+    <h2>School Profitability Calculator</h2>
+    <p>Calculate revenue, costs, and profits for your school.</p>
+
+    <div class="calculator-grid">
+      <!-- INPUTS -->
+      <div class="input-section">
+        <h3>Inputs</h3>
+
+        <div class="input-group">
+          <label for="school-students">Number of Students</label>
+          <input type="number" id="school-students" placeholder="Enter total enrollment">
+        </div>
+
+        <div class="input-group">
+          <label for="school-tuition">Tuition Per Student (Annual, R)</label>
+          <input type="number" id="school-tuition" placeholder="Enter annual tuition fee">
+        </div>
+
+        <div class="input-group">
+          <label for="school-staff">Staff Costs (R)</label>
+          <input type="number" id="school-staff" placeholder="Monthly salaries">
+        </div>
+
+        <div class="input-group">
+          <label for="school-facilities">Facilities & Infrastructure (R)</label>
+          <input type="number" id="school-facilities" placeholder="Maintenance & building costs">
+        </div>
+
+        <div class="input-group">
+          <label for="school-supplies">Supplies & Materials (R)</label>
+          <input type="number" id="school-supplies" placeholder="Books, stationery, etc.">
+        </div>
+
+        <div class="input-group">
+          <label for="school-fixed">Fixed Costs (R)</label>
+          <input type="number" id="school-fixed" placeholder="Insurance, utilities">
+        </div>
+
+        <button type="button" id="resetBtn">Clear All</button>
+      </div>
+
+      <!-- OUTPUTS -->
+      <div class="output-section">
+        <h3>Results</h3>
+
+        <div class="output-group">
+          <div class="output-label">Student Count</div>
+          <div class="output-value" id="school-students-output">0</div>
+        </div>
+
+        <div class="output-group">
+          <div class="output-label">Total Revenue</div>
+          <div class="output-value" id="school-revenue">R0.00</div>
+        </div>
+
+        <div class="output-group">
+          <div class="output-label">Total Costs</div>
+          <div class="output-value" id="school-total-costs">R0.00</div>
+        </div>
+
+        <div class="output-group">
+          <div class="output-label">Profit / Loss</div>
+          <div class="output-value" id="school-profit">R0.00</div>
+        </div>
+
+        <div class="output-group">
+          <div class="output-label">Cost Per Student</div>
+          <div class="output-value" id="school-per-student">R0.00</div>
+        </div>
+
+        <div class="output-group">
+          <div class="output-label">Revenue Per Student</div>
+          <div class="output-value" id="school-revenue-per-student">R0.00</div>
+        </div>
+
+        <div class="output-group">
+          <div class="output-label">ROI (%)</div>
+          <div class="output-value" id="school-roi">0.00%</div>
+        </div>
+
+        <div class="output-group">
+          <div class="output-label">Profit Margin (%)</div>
+          <div class="output-value" id="school-margin">0.00%</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-container">
+    
+    <div class="footer-about">
+      <div class="logo">
+        <img src="images/Untitled design.png" alt="Logo" class="logo-img">
+      </div>
+      <h3>Sandile SystemsWorks</h3>
+      <p>Professional business solutions and calculators for all sectors. We also provide <strong>web development, systems suites, and SaaS tools</strong> to help your business grow.</p>
+    </div>
+
+    <div class="footer-contact">
+      <h4>Contact Us</h4>
+      <p>Email: <a href="mailto:thabethesandile44@gmail.com">thabethesandile44@gmail.com</a></p>
+      <p>Phone: <a href="tel:+27717378540">071 737 8540</a></p>
+    </div>
+
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <a href="index.html">Home</a><br>
+      <a href="about.html">About</a><br>
+      <a href="dashboard.html">Calculators</a><br>
+    </div>
+
+    <div class="footer-copy">
+      <p>&copy; 2026 Sandile SystemsWorks. All rights reserved.</p>
+    </div>
+
+  </div>
+</footer>
+
+<script>
+  function formatCurrency(value) {
+    return 'R' + Number(value).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  }
+
+  function formatPercentage(value) {
+    return Number(value).toFixed(2) + '%';
+  }
+
+  class SchoolCalculator {
+    calculateFromInputs(students, tuition, staff, facilities, supplies, fixed) {
+      students = parseFloat(students) || 0;
+      tuition = parseFloat(tuition) || 0;
+      staff = parseFloat(staff) || 0;
+      facilities = parseFloat(facilities) || 0;
+      supplies = parseFloat(supplies) || 0;
+      fixed = parseFloat(fixed) || 0;
+
+      const totalRevenue = students * tuition;
+      const totalCosts = staff + facilities + supplies + fixed;
+      const profitLoss = totalRevenue - totalCosts;
+      const costPerStudent = students ? totalCosts / students : 0;
+      const revenuePerStudent = students ? totalRevenue / students : 0;
+      const margin = totalRevenue ? (profitLoss / totalRevenue) * 100 : 0;
+      const roi = totalCosts ? (profitLoss / totalCosts) * 100 : 0;
+
+      return { students, totalRevenue, totalCosts, profitLoss, costPerStudent, revenuePerStudent, margin, roi };
+    }
+  }
+
+  const schoolCalc = new SchoolCalculator();
+  const schoolInputs = ['school-students','school-tuition','school-staff','school-facilities','school-supplies','school-fixed'];
+
+  schoolInputs.forEach(id => document.getElementById(id).addEventListener('input', updateSchoolCalculator));
+
+  function updateSchoolCalculator() {
+    const result = schoolCalc.calculateFromInputs(
+      document.getElementById('school-students').value,
+      document.getElementById('school-tuition').value,
+      document.getElementById('school-staff').value,
+      document.getElementById('school-facilities').value,
+      document.getElementById('school-supplies').value,
+      document.getElementById('school-fixed').value
+    );
+
+    document.getElementById('school-students-output').textContent = result.students.toFixed(0);
+    document.getElementById('school-revenue').textContent = formatCurrency(result.totalRevenue);
+    document.getElementById('school-total-costs').textContent = formatCurrency(result.totalCosts);
+
+    const profitEl = document.getElementById('school-profit');
+    profitEl.textContent = formatCurrency(result.profitLoss);
+    profitEl.className = 'output-value ' + (result.profitLoss >= 0 ? 'positive' : 'negative');
+
+    document.getElementById('school-per-student').textContent = formatCurrency(result.costPerStudent);
+    document.getElementById('school-revenue-per-student').textContent = formatCurrency(result.revenuePerStudent);
+    document.getElementById('school-roi').textContent = formatPercentage(result.roi);
+    document.getElementById('school-margin').textContent = formatPercentage(result.margin);
+  }
+
+  document.getElementById('resetBtn').addEventListener('click', () => {
+    schoolInputs.forEach(id => document.getElementById(id).value = '');
+    updateSchoolCalculator();
+  });
+
+  // Initialize blank calculation
+  updateSchoolCalculator();
+</script>
+</body>
+</html>

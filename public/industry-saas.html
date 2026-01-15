@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SaaS Calculators - Sandile SystemsWorks</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/calculators.css">
+</head>
+<body>
+<!-- HEADER -->
+<header>
+  <div class="header-container">
+    <div class="logo">
+      <img src="images/Untitled design.png" alt="Logo" class="logo-img">
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="dashboard.html">Calculators</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="breadcrumb">
+    <a href="dashboard.html">Sectors</a>
+    <span>→</span>
+    <a href="sector-quaternary.html">Quaternary</a>
+    <span>→</span>
+    <span>SaaS</span>
+  </div>
+
+  <h1>SaaS Calculators</h1>
+  <p>Analyze subscription revenue, churn, operational costs, and profitability.</p>
+
+  <div class="calculator-container">
+    <h2>SaaS Monthly Profitability Calculator</h2>
+    <p>Calculate MRR, net MRR, profit, ROI, margins, and runway.</p>
+
+    <div class="calculator-grid">
+      <!-- INPUTS -->
+      <div class="input-section">
+        <h3>Inputs</h3>
+
+        <div class="input-group">
+          <label for="saas-mrr">Monthly Recurring Revenue (MRR, R)</label>
+          <input type="number" id="saas-mrr" placeholder="Total MRR" min="0">
+        </div>
+
+        <div class="input-group">
+          <label for="saas-churn">Monthly Churn Rate (%)</label>
+          <input type="number" id="saas-churn" placeholder="Customer churn %" min="0">
+        </div>
+
+        <div class="input-group">
+          <label for="saas-dev">Development Costs (R)</label>
+          <input type="number" id="saas-dev" placeholder="Engineering & product" min="0">
+        </div>
+
+        <div class="input-group">
+          <label for="saas-infrastructure">Infrastructure Costs (R)</label>
+          <input type="number" id="saas-infrastructure" placeholder="Hosting, servers, databases" min="0">
+        </div>
+
+        <div class="input-group">
+          <label for="saas-support">Support & CS Costs (R)</label>
+          <input type="number" id="saas-support" placeholder="Customer support staff" min="0">
+        </div>
+
+        <div class="input-group">
+          <label for="saas-marketing">Marketing & Sales Costs (R)</label>
+          <input type="number" id="saas-marketing" placeholder="Customer acquisition" min="0">
+        </div>
+
+        <button type="button" id="resetBtn">Reset All</button>
+      </div>
+
+      <!-- OUTPUTS -->
+      <div class="output-section">
+        <h3>Results</h3>
+
+        <div class="output-group"><div class="output-label">Monthly Recurring Revenue</div><div class="output-value" id="saas-mrr-output">R0.00</div></div>
+        <div class="output-group"><div class="output-label">Net MRR (After Churn)</div><div class="output-value" id="saas-net-mrr">R0.00</div></div>
+        <div class="output-group"><div class="output-label">Churn Impact</div><div class="output-value" id="saas-churn-impact">R0.00</div></div>
+        <div class="output-group"><div class="output-label">Total Costs</div><div class="output-value" id="saas-total-costs">R0.00</div></div>
+        <div class="output-group"><div class="output-label">Profit / Loss</div><div class="output-value" id="saas-profit">R0.00</div></div>
+        <div class="output-group"><div class="output-label">ROI (%)</div><div class="output-value" id="saas-roi">0.00%</div></div>
+        <div class="output-group"><div class="output-label">Profit Margin (%)</div><div class="output-value" id="saas-margin">0.00%</div></div>
+        <div class="output-group"><div class="output-label">Runway (months)</div><div class="output-value" id="saas-runway">0</div></div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-container">
+    
+    <div class="footer-about">
+      <div class="logo">
+        <img src="images/Untitled design.png" alt="Logo" class="logo-img">
+      </div>
+      <h3>Sandile SystemsWorks</h3>
+      <p>Professional business solutions and calculators for all sectors. We also provide <strong>web development, systems suites, and SaaS tools</strong> to help your business grow.</p>
+    </div>
+
+    <div class="footer-contact">
+      <h4>Contact Us</h4>
+      <p>Email: <a href="mailto:thabethesandile44@gmail.com">thabethesandile44@gmail.com</a></p>
+      <p>Phone: <a href="tel:+27717378540">071 737 8540</a></p>
+    </div>
+
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <a href="index.html">Home</a><br>
+      <a href="about.html">About</a><br>
+      <a href="dashboard.html">Calculators</a><br>
+    </div>
+
+    <div class="footer-copy">
+      <p>&copy; 2026 Sandile SystemsWorks. All rights reserved.</p>
+    </div>
+
+  </div>
+</footer>
+
+<script>
+  class SaaSCalculator {
+    calculateFromInputs(mrr, churn, dev, infrastructure, support, marketing) {
+      mrr = parseFloat(mrr) || 0;
+      churn = parseFloat(churn) || 0;
+      dev = parseFloat(dev) || 0;
+      infrastructure = parseFloat(infrastructure) || 0;
+      support = parseFloat(support) || 0;
+      marketing = parseFloat(marketing) || 0;
+
+      const churnImpact = (mrr * churn) / 100;
+      const netMRR = mrr - churnImpact;
+      const totalCosts = dev + infrastructure + support + marketing;
+      const profitLoss = netMRR - totalCosts;
+      const roi = totalCosts ? (profitLoss / totalCosts) * 100 : 0;
+      const margin = mrr ? (profitLoss / mrr) * 100 : 0;
+      const runwayMonths = profitLoss <= 0 ? 0 : totalCosts ? netMRR / totalCosts : 0;
+
+      return { mrr, netMRR, churnImpact, totalCosts, profitLoss, roi, margin, runwayMonths };
+    }
+  }
+
+  function formatCurrency(value) {
+    return 'R' + Number(value).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  }
+
+  function formatPercentage(value) {
+    return Number(value).toFixed(2) + '%';
+  }
+
+  const saasCalc = new SaaSCalculator();
+  const saasInputs = ['saas-mrr', 'saas-churn', 'saas-dev', 'saas-infrastructure', 'saas-support', 'saas-marketing'];
+
+  saasInputs.forEach(id => {
+    document.getElementById(id).addEventListener('input', updateSaaSCalculator);
+  });
+
+  function updateSaaSCalculator() {
+    const result = saasCalc.calculateFromInputs(
+      document.getElementById('saas-mrr').value,
+      document.getElementById('saas-churn').value,
+      document.getElementById('saas-dev').value,
+      document.getElementById('saas-infrastructure').value,
+      document.getElementById('saas-support').value,
+      document.getElementById('saas-marketing').value
+    );
+
+    document.getElementById('saas-mrr-output').textContent = formatCurrency(result.mrr);
+    document.getElementById('saas-net-mrr').textContent = formatCurrency(result.netMRR);
+    document.getElementById('saas-churn-impact').textContent = formatCurrency(result.churnImpact);
+    document.getElementById('saas-total-costs').textContent = formatCurrency(result.totalCosts);
+
+    const profitEl = document.getElementById('saas-profit');
+    profitEl.textContent = formatCurrency(result.profitLoss);
+    profitEl.className = 'output-value ' + (result.profitLoss >= 0 ? 'positive' : 'negative');
+
+    document.getElementById('saas-roi').textContent = formatPercentage(result.roi);
+    document.getElementById('saas-margin').textContent = formatPercentage(result.margin);
+    document.getElementById('saas-runway').textContent = result.runwayMonths.toFixed(1);
+  }
+
+  // Reset button
+  document.getElementById('resetBtn').addEventListener('click', () => {
+    saasInputs.forEach(id => document.getElementById(id).value = '');
+    updateSaaSCalculator();
+  });
+
+  // Initialize default calculation
+  updateSaaSCalculator();
+</script>
+</body>
+</html>
