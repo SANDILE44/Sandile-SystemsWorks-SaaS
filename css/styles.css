@@ -35,7 +35,7 @@ footer img{
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  border-bottom: 1px solid #00a2ff;
+  border-bottom: 1px solid #ffffff;
 }
 
 .logo {
@@ -66,7 +66,7 @@ footer img{
 
 .header-container nav button {
   background: none;
-  border: 1px solid #00b4d8;
+  border: 1px solid #00d5ff;
   padding: 0.3rem 0.8rem;
   border-radius: 5px;
   cursor: pointer;
@@ -327,12 +327,12 @@ main > section, main > .cards-grid, main > p {
 
 /* FOOTER LINKS (if any added later) */
 footer a {
-  color: #00b4d8;
+  color: #ffffff;
   text-decoration: none;
 }
 
 footer a:hover {
-  color: #90e0ef;
+  color: #00bfff;
   text-decoration: underline;
 }
 
@@ -411,12 +411,13 @@ footer {
 }
 
 .footer-links a {
-  color: #90e0ef;
+  color: #ffffff;
   text-decoration: none;
   margin-right: 0.8rem;
 }
 
 .footer-links a:hover {
+  color: #00bfff;
   text-decoration: underline;
 }
 
@@ -425,33 +426,6 @@ footer {
   margin-top: 1rem;
   text-align: center;
   color: #888;
-}
-
-/* ================= HAMBURGER (MOBILE) ================= */
-.hamburger {
-    display: none;
-    flex-direction: column;
-    gap: 5px;
-    cursor: pointer;
-}
-
-.hamburger span {
-    width: 26px;
-    height: 3px;
-    background: #38bdf8;
-    border-radius: 2px;
-    transition: all 0.3s ease;
-}
-
-/* Hamburger animation */
-.hamburger.active span:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
-}
-.hamburger.active span:nth-child(2) {
-    opacity: 0;
-}
-.hamburger.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(5px, -5px);
 }
 
 /* ================= COLOR SYSTEM (LOGIN PAGE MATCH) ================= */
@@ -476,6 +450,7 @@ body {
 }
 
 header,
+body,
 footer,
 .card,
 .calculator-container,
@@ -532,38 +507,6 @@ a:hover {
   transform: translateY(-4px);
 }
 
-/* ================= MOBILE NAV SLIDE ================= */
-@media (max-width: 768px) {
-
-  .hamburger {
-    display: flex;
-  }
-
-  .header-container nav {
-    position: fixed;
-    top: 0;
-    left: -50%;
-    width: 50%;
-    height: 100vh;
-    background: var(--bg-main);
-    flex-direction: column;
-    padding: 4rem 1.5rem;
-    gap: 1.2rem;
-    transition: left 0.3s ease;
-    z-index: 999;
-    border-right: 1px solid var(--border-soft);
-  }
-
-  .header-container nav.active {
-    left: 0;
-  }
-
-  .header-container nav a,
-  .header-container nav button {
-    margin: 0;
-    font-size: 1.1rem;
-  }
-}
 
 /* ================= MOBILE OVERLAY ================= */
 .nav-overlay {
@@ -601,3 +544,148 @@ a:hover {
 .output-value.positive { color: #00ff7f; }
 .output-value.negative { color: #ff4d4d; }
 
+
+
+/* Logo on left */
+.logo img {
+  height: 50px;
+}
+
+/* MOBILE ONLY */
+@media screen and (max-width: 768px) {
+  
+  /* Hamburger icon */
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 28px;
+    height: 22px;
+    cursor: pointer;
+    z-index: 1001; /* above overlay */
+  }
+
+  .hamburger span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: #00b4d8;
+    border-radius: 3px;
+    transition: all 0.4s ease;
+  }
+
+  /* Transform to X when active */
+  .hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translateY(9px);
+  }
+
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translateY(-9px);
+  }
+
+  /* Side navigation overlay */
+  #sideNav {
+    position: fixed;
+    top: 0;
+    right: -100%; /* hidden by default */
+    width: 100%;
+    max-width: 300px; /* menu width */
+    height: 100%;
+    background-color: #0f162a;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    padding: 3rem 2rem;
+    gap: 1.5rem;
+    transition: right 0.4s ease;
+    z-index: 1000;
+    overflow-y: auto;
+  }
+
+  /* Show menu when active */
+  #sideNav.active {
+    right: 0;
+  }
+
+  #sideNav a {
+    text-decoration: none;
+    color: #00b4d8;
+    font-size: 1.2rem;
+    font-weight: 600;
+    width: 100%;
+  }
+
+  #sideNav a:hover {
+    color: #00d5ff;
+  }
+}
+
+/* DESKTOP: hide hamburger, show nav inline */
+@media screen and (min-width: 769px) {
+  .hamburger {
+    display: none;
+  }
+
+  #sideNav {
+    position: static;
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    height: auto;
+    background: none;
+    padding: 0;
+    max-width: none;
+    right: auto;
+  }
+
+  #sideNav a {
+    color: #00b4d8;
+    font-weight: 600;
+    font-size: 1rem;
+  }
+
+  #sideNav a:hover {
+    color: #00d5ff;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .header-container {
+    flex-direction: row;       /* keep items in a row */
+    justify-content: space-between; /* logo left, hamburger right */
+    align-items: center;       /* vertical alignment */
+    padding: 0.8rem 1rem;      /* optional spacing */
+  }
+
+  /* Make sure hamburger stays visible */
+  .hamburger {
+    display: flex;             
+    z-index: 1001;            
+  }
+
+  /* SideNav remains as is */
+  #sideNav {
+    right: -100%; /* hidden by default */
+  }
+}
+
+body {
+  background-color: #020617;
+  color: #e5e7eb;
+  line-height: 1.6;
+}
+
+/* Header link hover zoom */
+.header-container nav a {
+  color: white;
+  transition: transform 0.3s ease, color 0.3s ease; /* smooth transform + color */
+}
+
+.header-container nav a:hover {
+  transform: scale(1.2); /* slightly bigger */
+  color: #00d5ff;         /* keep your hover color */
+}
