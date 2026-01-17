@@ -53,27 +53,41 @@
       <div class="input-section">
         <h3>Inputs</h3>
 
-        <div class="input-group">
-          <label for="const-value">Project Contract Value (R)</label>
-          <input type="number" id="const-value" placeholder="Total project revenue" min="0">
-        </div>
-        <div class="input-group">
-          <label for="const-material">Material Costs (R)</label>
-          <input type="number" id="const-material" placeholder="Concrete, steel, etc." min="0">
-        </div>
-        <div class="input-group">
-          <label for="const-labor">Labor Costs (R)</label>
-          <input type="number" id="const-labor" placeholder="Worker wages and salaries" min="0">
-        </div>
-        <div class="input-group">
-          <label for="const-equipment">Equipment & Machinery Costs (R)</label>
-          <input type="number" id="const-equipment" placeholder="Rental and operation" min="0">
-        </div>
-        <div class="input-group">
-          <label for="const-fixed">Fixed Costs (R)</label>
-          <input type="number" id="const-fixed" placeholder="Office, permits, insurance" min="0">
-        </div>
-        <button type="button" id="resetBtn">Reset All</button>
+       <div class="input-group">
+  <label for="const-value">Project Contract Value (R)</label>
+  <input type="number" id="const-value" placeholder="Enter total project value" min="0">
+</div>
+
+<div class="input-group">
+  <label for="const-material">Material Costs (R)</label>
+  <input type="number" id="const-material" placeholder="Enter total material costs" min="0">
+</div>
+
+<div class="input-group">
+  <label for="const-labor">Labor Costs (R)</label>
+  <input type="number" id="const-labor" placeholder="Enter monthly labor costs" min="0" >
+</div>
+
+<div class="input-group">
+  <label for="const-equipment">Equipment & Machinery Costs (R)</label>
+  <input type="number" id="const-equipment" placeholder="Enter monthly equipment costs" min="0" >
+</div>
+
+<div class="input-group">
+  <label for="const-fixed">Fixed Costs (R)</label>
+  <input type="number" id="const-fixed" placeholder="Enter monthly fixed costs" min="0">
+</div>
+
+<div class="input-group">
+  <label for="const-duration">Project Duration (Months)</label>
+  <input type="number" id="const-duration" placeholder="Enter project duration in months" min="1">
+</div>
+      
+<p class="calculator-note">
+Note: Material costs are once-off. Labor, equipment, and fixed costs are monthly. Duration is in months.
+</p>
+
+<button type="button" id="resetBtn">Reset All</button>
       </div>
 
       <!-- OUTPUTS -->
@@ -285,7 +299,7 @@
 
   // Construction Calculator Class
   class ConstructionProjectCalculator {
-    calculateFromInputs(value, material, labor, equipment, fixed) {
+    calculateFromInputs(value, material, labor, equipment, fixed, duration) {
       value = Number(value) || 0;
       material = Number(material) || 0;
       labor = Number(labor) || 0;
@@ -328,7 +342,15 @@
   }
 
   const constCalc = new ConstructionProjectCalculator();
-  const constInputs = ['const-value','const-material','const-labor','const-equipment','const-fixed'];
+  const constInputs = [
+  'const-value',
+  'const-material',
+  'const-labor',
+  'const-equipment',
+  'const-fixed',
+  'const-duration'
+];
+
 
   constInputs.forEach(id => {
     document.getElementById(id).addEventListener('input', updateConstCalculator);
@@ -352,7 +374,9 @@
 
     const profitEl = document.getElementById('const-profit');
     profitEl.textContent = formatCurrency(result.profitLoss);
-    profitEl.className = 'output-value ' + (result.profitLoss >= 0 ? 'positive' : 'negative');
+    profitEl.classList.remove('positive','negative');
+profitEl.classList.add(result.profitLoss >= 0 ? 'positive' : 'negative');
+
 
     document.getElementById('const-margin').textContent = formatPercentage(result.margin);
     document.getElementById('const-roi').textContent = formatPercentage(result.roi);

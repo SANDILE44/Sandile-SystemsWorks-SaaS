@@ -130,16 +130,22 @@ input[type="number"]:focus {
   align-items: center;
   padding: 0.35rem 0;
   border-bottom: 1px solid rgba(255,255,255,0.06);
+  flex-wrap: wrap; /* allow wrap for very long numbers */
 }
 
 .output-label {
   font-size: 0.9rem;
   color: #94a3b8;
+  flex: 1 1 auto; /* label takes remaining space */
+  min-width: 100px;
 }
 
 .output-value {
   font-weight: 600;
   font-size: 0.95rem;
+  flex: 0 1 auto; /* value takes only needed width */
+  text-align: right;
+  overflow-wrap: anywhere; /* wraps very long numbers */
 }
 
 /* PROFIT COLORS */
@@ -151,6 +157,28 @@ input[type="number"]:focus {
   color: #ff0000;
 }
 
+/* ================= BUTTON ================= */
+button#resetBtn {
+  padding: 10px 20px;
+  background-color: #1a73e8;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button#resetBtn:hover {
+  background-color: #155ab6;
+}
+
+/* ================= CALCULATOR NOTE ================= */
+.calculator-note {
+  font-size: 14px;
+  color: #94a3b8;
+  margin-top: 10px;
+}
+
 /* ================= RESPONSIVE ================= */
 @media (max-width: 768px) {
   .calculator-grid {
@@ -160,12 +188,48 @@ input[type="number"]:focus {
   main {
     margin-top: 1.5rem;
   }
+
+  .output-group {
+    flex-direction: row; /* label left, value right */
+    justify-content: space-between;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .input-group input {
+    font-size: 0.9rem;
+    padding: 0.55rem 0.6rem;
+  }
+
+  button#resetBtn {
+    width: 100%;
+  }
 }
 
+@media (max-width: 480px) {
+  .calculator-container {
+    padding: 15px;
+    margin: 15px;
+  }
+
+  .output-group {
+    font-size: 0.85rem;
+  }
+
+  .output-value {
+    overflow-wrap: anywhere; /* wraps only if number too long */
+  }
+
+  input[type="number"] {
+    font-size: 0.85rem;
+    padding: 0.5rem 0.55rem;
+  }
+}
+
+/* ================= SECTORS NAVIGATION ================= */
 .sectors-navigation {
   margin: 50px 0;
   padding: 20px;
-
   border-radius: 10px;
 }
 
@@ -220,6 +284,7 @@ input[type="number"]:focus {
   text-decoration: underline;
 }
 
+/* ================= RESPONSIVE SECTORS ================= */
 @media (max-width: 900px) {
   .sectors-grid {
     flex-direction: column;
@@ -227,10 +292,7 @@ input[type="number"]:focus {
   }
 }
 
-/* ================= MOBILE SECTORS NAVIGATION (NO CARDS) ================= */
 @media (max-width: 768px) {
-
-  /* Adjust sectors navigation container */
   .sectors-navigation {
     padding: 1rem 1.2rem;
     margin: 2rem 0;
@@ -238,39 +300,35 @@ input[type="number"]:focus {
 
   .sectors-navigation h2 {
     font-size: 1.6rem;
-    text-align: center;
     margin-bottom: 0.8rem;
   }
 
   .sectors-navigation p {
     font-size: 0.95rem;
-    text-align: center;
     margin-bottom: 1.5rem;
   }
 
-  /* Stack the sector groups vertically */
   .sectors-grid {
     flex-direction: column;
-    gap: 1rem; /* spacing between groups */
+    gap: 1rem;
     align-items: stretch;
   }
 
-  /* Each sector group flows naturally without card */
   .sector-group {
     flex: 1 1 100%;
     min-width: auto;
-    padding: 0; /* remove padding/card spacing */
-    border: none; /* no borders */
+    padding: 0;
+    border: none;
     border-radius: 0;
-    background: none; /* no background */
-    box-shadow: none; /* no shadow */
+    background: none;
+    box-shadow: none;
   }
 
   .sector-group h3 {
     font-size: 1.3rem;
     margin-bottom: 0.6rem;
     text-align: left;
-    border-bottom: 2px solid #00ccff; /* keep underline */
+    border-bottom: 2px solid #00ccff;
     padding-bottom: 0.3rem;
   }
 
