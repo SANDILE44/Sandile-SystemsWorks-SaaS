@@ -158,7 +158,9 @@ input[type="number"]:focus {
 }
 
 /* ================= BUTTON ================= */
-button#resetBtn {
+button#resetBtn,
+button.resetBtn,
+button.reset-btn {
   padding: 10px 20px;
   background-color: #1a73e8;
   color: #fff;
@@ -168,7 +170,8 @@ button#resetBtn {
   font-size: 16px;
 }
 
-button#resetBtn:hover {
+button#resetBtn,
+button.resetBtn:hover {
   background-color: #155ab6;
 }
 
