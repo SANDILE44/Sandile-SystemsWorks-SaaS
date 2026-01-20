@@ -689,3 +689,8 @@ body {
   transform: scale(1.2); /* slightly bigger */
   color: #00d5ff;         /* keep your hover color */
 }
+
+/* ================= SIDE NAV COLOR MATCH ================= */
+#sideNav {
+  background-color: #020617 !important;
+}
