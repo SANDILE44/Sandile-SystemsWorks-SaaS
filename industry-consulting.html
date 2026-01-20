@@ -51,29 +51,54 @@
         <h3>Inputs</h3>
 
         <div class="input-group">
-          <label for="consult-hours">Total Project Hours</label>
-          <input type="number" id="consult-hours" placeholder="Enter total hours" min="0">
-        </div>
+  <label for="consult-hours">Total Project Hours</label>
+  <input type="number" id="consult-hours" placeholder="Enter total hours" min="0">
+</div>
 
-        <div class="input-group">
-          <label for="consult-rate">Hourly Rate (R)</label>
-          <input type="number" id="consult-rate" placeholder="Rate per hour" min="0">
-        </div>
+<div class="input-group">
+  <label for="consult-rate">Hourly Rate (R)</label>
+  <input type="number" id="consult-rate" placeholder="Rate per hour" min="0">
+</div>
 
-        <div class="input-group">
-          <label for="consult-expenses">Project Expenses (R)</label>
-          <input type="number" id="consult-expenses" placeholder="Travel, materials, etc." min="0">
-        </div>
+<div class="input-group">
+  <label for="consult-expenses">Project Expenses (R)</label>
+  <input type="number" id="consult-expenses" placeholder="Travel, materials, etc." min="0">
+</div>
 
-        <div class="input-group">
-          <label for="consult-labor">Labor Costs (R)</label>
-          <input type="number" id="consult-labor" placeholder="Staff salaries" min="0">
-        </div>
+<div class="input-group">
+  <label for="consult-labor">Labor Costs (R)</label>
+  <input type="number" id="consult-labor" placeholder="Staff salaries" min="0">
+</div>
 
-        <div class="input-group">
-          <label for="consult-fixed">Fixed Costs (R)</label>
-          <input type="number" id="consult-fixed" placeholder="Office, admin, software" min="0">
-        </div>
+<div class="input-group">
+  <label for="consult-fixed">Fixed Costs (R)</label>
+  <input type="number" id="consult-fixed" placeholder="Office, admin, software" min="0">
+</div>
+
+<div class="input-group">
+  <label for="consult-discount">Discount (%)</label>
+  <input type="number" id="consult-discount" placeholder="Any client discount %" min="0" max="100">
+</div>
+
+<div class="input-group">
+  <label for="consult-overtime-hours">Overtime Hours</label>
+  <input type="number" id="consult-overtime-hours" placeholder="Extra billed hours" min="0">
+</div>
+
+<div class="input-group">
+  <label for="consult-overtime-rate">Overtime Hourly Rate (R)</label>
+  <input type="number" id="consult-overtime-rate" placeholder="Rate per overtime hour" min="0">
+</div>
+
+<div class="input-group">
+  <label for="consult-variable-costs">Variable Costs (R)</label>
+  <input type="number" id="consult-variable-costs" placeholder="Other variable costs" min="0">
+</div>
+
+<div class="input-group">
+  <label for="consult-contingency">Contingency / Risk (%)</label>
+  <input type="number" id="consult-contingency" placeholder="Percentage for unexpected costs" min="0" max="100">
+</div>
 
         <button type="button" id="resetBtn">Reset All</button>
       </div>
@@ -83,54 +108,80 @@
         <h3>Results</h3>
 
         <div class="output-group">
-          <div class="output-label">Total Revenue</div>
-          <div class="output-value" id="consult-revenue">R0.00</div>
-        </div>
+  <div class="output-label">Total Revenue</div>
+  <div class="output-value" id="consult-revenue">R0.00</div>
+</div>
 
-        <div class="output-group">
-          <div class="output-label">Project Expenses</div>
-          <div class="output-value" id="consult-expenses-output">R0.00</div>
-        </div>
+<div class="output-group">
+  <div class="output-label">Discount Amount</div>
+  <div class="output-value" id="consult-discount-output">R0.00</div>
+</div>
 
-        <div class="output-group">
-          <div class="output-label">Labor Costs</div>
-          <div class="output-value" id="consult-labor-output">R0.00</div>
-        </div>
+<div class="output-group">
+  <div class="output-label">Revenue After Discount</div>
+  <div class="output-value" id="consult-revenue-after-discount">R0.00</div>
+</div>
 
-        <div class="output-group">
-          <div class="output-label">Fixed Costs</div>
-          <div class="output-value" id="consult-fixed-output">R0.00</div>
-        </div>
+<div class="output-group">
+  <div class="output-label">Project Expenses</div>
+  <div class="output-value" id="consult-expenses-output">R0.00</div>
+</div>
 
-        <div class="output-group">
-          <div class="output-label">Total Costs</div>
-          <div class="output-value" id="consult-costs">R0.00</div>
-        </div>
+<div class="output-group">
+  <div class="output-label">Labor Costs</div>
+  <div class="output-value" id="consult-labor-output">R0.00</div>
+</div>
 
-        <div class="output-group">
-          <div class="output-label">Profit / Loss</div>
-          <div class="output-value" id="consult-profit">R0.00</div>
-        </div>
+<div class="output-group">
+  <div class="output-label">Fixed Costs</div>
+  <div class="output-value" id="consult-fixed-output">R0.00</div>
+</div>
 
-        <div class="output-group">
-          <div class="output-label">Profit per Hour</div>
-          <div class="output-value" id="consult-profit-hour">R0.00</div>
-        </div>
+<div class="output-group">
+  <div class="output-label">Overtime Revenue</div>
+  <div class="output-value" id="consult-overtime-output">R0.00</div>
+</div>
 
-        <div class="output-group">
-          <div class="output-label">Profit Margin (%)</div>
-          <div class="output-value" id="consult-margin">0.00%</div>
-        </div>
+<div class="output-group">
+  <div class="output-label">Variable Costs</div>
+  <div class="output-value" id="consult-variable-output">R0.00</div>
+</div>
 
-        <div class="output-group">
-          <div class="output-label">ROI (%)</div>
-          <div class="output-value" id="consult-roi">0.00%</div>
-        </div>
+<div class="output-group">
+  <div class="output-label">Contingency Amount</div>
+  <div class="output-value" id="consult-contingency-output">R0.00</div>
+</div>
 
-        <div class="output-group">
-          <div class="output-label">Break-even Hours</div>
-          <div class="output-value" id="consult-breakeven">0.00</div>
-        </div>
+<div class="output-group">
+  <div class="output-label">Total Costs</div>
+  <div class="output-value" id="consult-costs">R0.00</div>
+</div>
+
+<div class="output-group">
+  <div class="output-label">Profit / Loss</div>
+  <div class="output-value" id="consult-profit">R0.00</div>
+</div>
+
+<div class="output-group">
+  <div class="output-label">Profit per Hour</div>
+  <div class="output-value" id="consult-profit-hour">R0.00</div>
+</div>
+
+<div class="output-group">
+  <div class="output-label">Profit Margin (%)</div>
+  <div class="output-value" id="consult-margin">0.00%</div>
+</div>
+
+<div class="output-group">
+  <div class="output-label">ROI (%)</div>
+  <div class="output-value" id="consult-roi">0.00%</div>
+</div>
+
+<div class="output-group">
+  <div class="output-label">Break-even Hours</div>
+  <div class="output-value" id="consult-breakeven">0.00</div>
+</div>
+
       </div>
     </div>
   </div>
@@ -246,73 +297,116 @@
 </footer>
 
 <script>
-  // Helper functions
-  function formatCurrency(value) {
-    return 'R' + Number(value).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+ // Helper functions
+function formatCurrency(value) {
+  return 'R' + Number(value).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+}
+function formatPercentage(value) {
+  return Number(value).toFixed(2) + '%';
+}
+
+// Consulting Calculator
+class ConsultingCalculator {
+  calculateFromInputs(hours, rate, expenses, labor, fixed, discount, overtimeHours, overtimeRate, variableCosts, contingency) {
+    hours = parseFloat(hours) || 0;
+    rate = parseFloat(rate) || 0;
+    expenses = parseFloat(expenses) || 0;
+    labor = parseFloat(labor) || 0;
+    fixed = parseFloat(fixed) || 0;
+    discount = parseFloat(discount) || 0;
+    overtimeHours = parseFloat(overtimeHours) || 0;
+    overtimeRate = parseFloat(overtimeRate) || 0;
+    variableCosts = parseFloat(variableCosts) || 0;
+    contingency = parseFloat(contingency) || 0;
+
+    const baseRevenue = hours * rate;
+    const overtimeRevenue = overtimeHours * overtimeRate;
+    const totalRevenue = baseRevenue + overtimeRevenue;
+    const discountAmount = totalRevenue * (discount / 100);
+    const revenueAfterDiscount = totalRevenue - discountAmount;
+
+    const subtotalCosts = expenses + labor + fixed + variableCosts;
+    const contingencyAmount = subtotalCosts * (contingency / 100);
+    const totalCosts = subtotalCosts + contingencyAmount;
+
+    const profitLoss = revenueAfterDiscount - totalCosts;
+    const profitPerHour = hours ? profitLoss / hours : 0;
+    const margin = revenueAfterDiscount ? (profitLoss / revenueAfterDiscount) * 100 : 0;
+    const roi = totalCosts ? (profitLoss / totalCosts) * 100 : 0;
+    const breakEvenHours = rate ? totalCosts / rate : 0;
+
+    return {
+      totalRevenue,
+      discountAmount,
+      revenueAfterDiscount,
+      expenses,
+      labor,
+      fixed,
+      overtimeRevenue,
+      variableCosts,
+      contingencyAmount,
+      totalCosts,
+      profitLoss,
+      profitPerHour,
+      margin,
+      roi,
+      breakEvenHours
+    };
   }
-  function formatPercentage(value) {
-    return Number(value).toFixed(2) + '%';
-  }
+}
 
-  // Consulting Calculator
-  class ConsultingCalculator {
-    calculateFromInputs(hours, rate, expenses, labor, fixed) {
-      hours = parseFloat(hours) || 0;
-      rate = parseFloat(rate) || 0;
-      expenses = parseFloat(expenses) || 0;
-      labor = parseFloat(labor) || 0;
-      fixed = parseFloat(fixed) || 0;
+const consultCalc = new ConsultingCalculator();
+const consultInputs = [
+  'consult-hours', 'consult-rate', 'consult-expenses', 'consult-labor', 'consult-fixed',
+  'consult-discount', 'consult-overtime-hours', 'consult-overtime-rate', 'consult-variable-costs', 'consult-contingency'
+];
 
-      const totalRevenue = hours * rate;
-      const totalCosts = expenses + labor + fixed;
-      const profitLoss = totalRevenue - totalCosts;
-      const profitPerHour = hours ? profitLoss / hours : 0;
-      const margin = totalRevenue ? (profitLoss / totalRevenue) * 100 : 0;
-      const roi = totalCosts ? (profitLoss / totalCosts) * 100 : 0;
-      const breakEvenHours = rate ? totalCosts / rate : 0;
+consultInputs.forEach(id => document.getElementById(id).addEventListener('input', updateConsultCalculator));
 
-      return { totalRevenue, expenses, labor, fixed, totalCosts, profitLoss, profitPerHour, margin, roi, breakEvenHours };
-    }
-  }
+function updateConsultCalculator() {
+  const result = consultCalc.calculateFromInputs(
+    document.getElementById('consult-hours').value,
+    document.getElementById('consult-rate').value,
+    document.getElementById('consult-expenses').value,
+    document.getElementById('consult-labor').value,
+    document.getElementById('consult-fixed').value,
+    document.getElementById('consult-discount').value,
+    document.getElementById('consult-overtime-hours').value,
+    document.getElementById('consult-overtime-rate').value,
+    document.getElementById('consult-variable-costs').value,
+    document.getElementById('consult-contingency').value
+  );
 
-  const consultCalc = new ConsultingCalculator();
-  const consultInputs = ['consult-hours','consult-rate','consult-expenses','consult-labor','consult-fixed'];
+  document.getElementById('consult-revenue').textContent = formatCurrency(result.totalRevenue);
+  document.getElementById('consult-discount-output').textContent = formatCurrency(result.discountAmount);
+  document.getElementById('consult-revenue-after-discount').textContent = formatCurrency(result.revenueAfterDiscount);
 
-  consultInputs.forEach(id => document.getElementById(id).addEventListener('input', updateConsultCalculator));
+  document.getElementById('consult-expenses-output').textContent = formatCurrency(result.expenses);
+  document.getElementById('consult-labor-output').textContent = formatCurrency(result.labor);
+  document.getElementById('consult-fixed-output').textContent = formatCurrency(result.fixed);
+  document.getElementById('consult-overtime-output').textContent = formatCurrency(result.overtimeRevenue);
+  document.getElementById('consult-variable-output').textContent = formatCurrency(result.variableCosts);
+  document.getElementById('consult-contingency-output').textContent = formatCurrency(result.contingencyAmount);
 
-  function updateConsultCalculator() {
-    const result = consultCalc.calculateFromInputs(
-      document.getElementById('consult-hours').value,
-      document.getElementById('consult-rate').value,
-      document.getElementById('consult-expenses').value,
-      document.getElementById('consult-labor').value,
-      document.getElementById('consult-fixed').value
-    );
+  const profitEl = document.getElementById('consult-profit');
+  profitEl.textContent = formatCurrency(result.profitLoss);
+  profitEl.className = 'output-value ' + (result.profitLoss >= 0 ? 'positive' : 'negative');
 
-    document.getElementById('consult-revenue').textContent = formatCurrency(result.totalRevenue);
-    document.getElementById('consult-expenses-output').textContent = formatCurrency(result.expenses);
-    document.getElementById('consult-labor-output').textContent = formatCurrency(result.labor);
-    document.getElementById('consult-fixed-output').textContent = formatCurrency(result.fixed);
-    document.getElementById('consult-costs').textContent = formatCurrency(result.totalCosts);
+  document.getElementById('consult-profit-hour').textContent = formatCurrency(result.profitPerHour);
+  document.getElementById('consult-margin').textContent = formatPercentage(result.margin);
+  document.getElementById('consult-roi').textContent = formatPercentage(result.roi);
+  document.getElementById('consult-breakeven').textContent = result.breakEvenHours.toFixed(2);
+}
 
-    const profitEl = document.getElementById('consult-profit');
-    profitEl.textContent = formatCurrency(result.profitLoss);
-    profitEl.className = 'output-value ' + (result.profitLoss >= 0 ? 'positive' : 'negative');
-
-    document.getElementById('consult-profit-hour').textContent = formatCurrency(result.profitPerHour);
-    document.getElementById('consult-margin').textContent = formatPercentage(result.margin);
-    document.getElementById('consult-roi').textContent = formatPercentage(result.roi);
-    document.getElementById('consult-breakeven').textContent = result.breakEvenHours.toFixed(2);
-  }
-
-  // Reset button functionality
-  document.getElementById('resetBtn').addEventListener('click', () => {
-    consultInputs.forEach(id => document.getElementById(id).value = '');
-    updateConsultCalculator();
-  });
-
-  // Initialize default calculation
+// Reset button functionality
+document.getElementById('resetBtn').addEventListener('click', () => {
+  consultInputs.forEach(id => document.getElementById(id).value = '');
   updateConsultCalculator();
+});
+
+// Initialize default calculation
+updateConsultCalculator();
+
 </script>
 <script>
   const hamburger = document.getElementById("hamburger");
