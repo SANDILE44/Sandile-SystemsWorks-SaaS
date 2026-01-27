@@ -141,3 +141,27 @@ input:focus {
   font-size: 0.9rem;
   color: #ff6b6b;
 }
+
+@media (max-width: 860px) {
+  /* simplify header */
+  .header-inner {
+    padding: 0.6rem 0;
+  }
+
+  .brand-logo {
+    height: 32px;
+  }
+
+  .brand-name {
+    display: none;
+  }
+
+  .header-actions {
+    display: none;
+  }
+
+  /* hamburger breathes */
+  .nav-toggle {
+    padding: 0.45rem 0.55rem;
+  }
+}

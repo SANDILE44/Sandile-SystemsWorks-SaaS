@@ -547,3 +547,37 @@ main {
   outline: none;
   box-shadow: 0 0 0 3px rgba(0, 180, 216, 0.25);
 }
+
+/* ===== DASHBOARD HEADER MOBILE FIX ===== */
+@media (max-width: 860px) {
+  .header-inner {
+    gap: 0.6rem;
+  }
+
+  .brand {
+    min-width: 0; /* IMPORTANT: remove hard min width */
+    flex: 1; /* let brand shrink */
+  }
+
+  .brand-logo {
+    height: 34px; /* smaller on mobile */
+  }
+
+  .header-actions {
+    min-width: auto; /* IMPORTANT: remove hard min width */
+    flex: 0 0 auto;
+  }
+
+  .btn-ghost {
+    padding: 0.5rem 0.75rem;
+    border-radius: 10px;
+  }
+}
+
+/* Extra tight phones */
+@media (max-width: 420px) {
+  .btn-ghost {
+    font-size: 0.9rem;
+    padding: 0.45rem 0.65rem;
+  }
+}
