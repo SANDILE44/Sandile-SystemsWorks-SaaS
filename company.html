@@ -6,6 +6,7 @@
     <title>Company - Sandile SystemsWorks</title>
     <link rel="stylesheet" href="css/landing.css" />
   </head>
+
   <body>
     <!-- HEADER -->
     <header class="header">
@@ -19,19 +20,33 @@
             />
             <span class="brand-name">Sandile SystemsWorks</span>
           </div>
+
           <nav class="nav" id="mainNav">
             <a href="index.html">Home</a>
             <a href="product.html">Product</a>
+            <a href="features.html">Features</a>
             <a href="solutions.html">Solutions</a>
             <a href="pricing.html">Pricing</a>
-            <a href="company.html">Company</a>
+            <a href="company.html" aria-current="page">Company</a>
             <a href="contact.html">Contact</a>
+
+            <div class="nav-mobile-actions">
+              <a href="login.html" class="nav-link-muted">Sign in</a>
+              <a href="signup.html" class="btn btn-primary btn-block"
+                >Start free trial</a
+              >
+            </div>
           </nav>
-          <button class="nav-toggle" id="navToggle" aria-expanded="false">
-            <span></span>
-            <span></span>
-            <span></span>
+
+          <button
+            class="nav-toggle"
+            id="navToggle"
+            aria-expanded="false"
+            aria-label="Toggle menu"
+          >
+            <span></span><span></span><span></span>
           </button>
+
           <div class="header-actions">
             <a href="login.html" class="link-muted">Sign in</a>
             <a href="signup.html" class="btn btn-primary">Start free trial</a>
@@ -51,10 +66,32 @@
             <p class="eyebrow">COMPANY</p>
             <h1>Built to help businesses move faster.</h1>
             <p class="subhead">
-              Sandile SystemsWorks is dedicated to removing guesswork from
-              business decisions. We build premium tools that empower
-              entrepreneurs and managers to make confident, data-driven choices.
+              Sandile SystemsWorks builds premium decision tools (our main
+              product) and also offers a separate premium website development
+              service for serious businesses that need fast, professional
+              delivery.
             </p>
+
+            <div class="hero-ctas">
+              <p class="subhead" style="margin-top: 1.2rem">
+                You can explore our
+                <a
+                  href="#website-service"
+                  style="color: var(--accent); font-weight: 800"
+                  >Website Development service</a
+                >
+                on this page, and also view our
+                <a href="#demos" style="color: var(--accent); font-weight: 800"
+                  >demo websites</a
+                >
+                to see real examples before you request the intake form.
+              </p>
+            </div>
+
+            <div class="trustline">
+              <span class="dot"></span>
+              Clear thinking • Accurate tools • Built for real workflows
+            </div>
           </div>
         </div>
       </section>
@@ -66,29 +103,31 @@
             <h2>Our mission</h2>
             <p>
               To eliminate decision paralysis by providing instant clarity on
-              business metrics that matter.
+              business metrics that matter — and help businesses present
+              themselves professionally online when needed.
             </p>
           </div>
+
           <div class="cards">
             <div class="card">
               <h3>Clear thinking</h3>
               <p>
-                We believe business decisions should be fast, confident, and
-                backed by data. No spreadsheets. No confusion.
+                Business decisions should be fast, confident, and backed by
+                data. No spreadsheets. No confusion.
               </p>
             </div>
             <div class="card">
-              <h3>Built for everyone</h3>
+              <h3>Built for real workflows</h3>
               <p>
-                Whether you're a solopreneur or leading a team, SystemsWorks
-                adapts to your needs and skill level.
+                We build systems around how businesses actually operate — simple
+                inputs, clear outputs, practical results.
               </p>
             </div>
             <div class="card">
               <h3>Always improving</h3>
               <p>
-                We release new calculators and features weekly based on real
-                feedback from our users.
+                We continuously improve the product and the delivery process so
+                clients get value faster and with less friction.
               </p>
             </div>
           </div>
@@ -102,32 +141,35 @@
             <h2>What we build</h2>
             <p>Premium tools designed for accuracy, speed, and ease of use.</p>
           </div>
+
           <div class="split">
             <div class="split-card">
               <h3>Decision Calculators</h3>
               <ul class="list">
-                <li>30+ pre-built calculators</li>
-                <li>Based on industry best practices</li>
-                <li>Updated with new features weekly</li>
-                <li>Customizable inputs and outputs</li>
+                <li>Sector-based calculators</li>
+                <li>Profit/Loss, margin, ROI, break-even</li>
+                <li>Advanced metrics + projections</li>
+                <li>Standardized outputs</li>
               </ul>
             </div>
+
             <div class="split-card">
-              <h3>Live Dashboards</h3>
+              <h3>Dashboards</h3>
               <ul class="list">
-                <li>Real-time metric visualization</li>
-                <li>Interactive charts and tables</li>
-                <li>Scenario comparison tools</li>
-                <li>Export-ready reports</li>
+                <li>Sector → industry navigation</li>
+                <li>Clean, consistent results layout</li>
+                <li>Fast comparisons across decisions</li>
+                <li>Designed for daily → strategic use</li>
               </ul>
             </div>
+
             <div class="split-card">
               <h3>Premium Support</h3>
               <ul class="list">
                 <li>Priority email support</li>
-                <li>User guides and tutorials</li>
-                <li>Weekly feature updates</li>
-                <li>Feature request voting</li>
+                <li>Guides + onboarding help</li>
+                <li>Roadmap feature delivery</li>
+                <li>Feature request tracking</li>
               </ul>
             </div>
           </div>
@@ -141,15 +183,13 @@
             <h2>How we build</h2>
             <p>Our principles guide every decision we make.</p>
           </div>
+
           <ol class="steps">
             <li>
               <div class="step-num">1</div>
               <div>
                 <h3>User-first design</h3>
-                <p>
-                  We listen to how real business people make decisions and build
-                  tools that fit their workflows, not the other way around.
-                </p>
+                <p>We build around real workflows, not “textbook” workflows.</p>
               </div>
             </li>
             <li>
@@ -157,8 +197,8 @@
               <div>
                 <h3>Accuracy matters</h3>
                 <p>
-                  Every calculator is tested against industry standards and
-                  real-world scenarios. Your decisions depend on it.
+                  We test formulas and flows so results stay consistent and
+                  trustworthy.
                 </p>
               </div>
             </li>
@@ -167,8 +207,8 @@
               <div>
                 <h3>Constant improvement</h3>
                 <p>
-                  We ship updates every week based on user feedback. Your
-                  suggestions directly shape the product.
+                  We iterate based on feedback and keep shipping upgrades that
+                  increase value.
                 </p>
               </div>
             </li>
@@ -176,49 +216,562 @@
         </div>
       </section>
 
-      <!-- PROOF STRIP -->
-      <section class="section">
+      <!-- WEBSITE SERVICE (BASED ON YOUR FORM) -->
+      <section class="section" id="website-service">
         <div class="container">
           <div class="section-head">
-            <h2>Why companies choose us</h2>
+            <h2>Website Development – Service (Separate)</h2>
+            <p>
+              This is a separate service (not the calculators product). Built
+              for businesses that want premium quality, clear requirements, and
+              fast delivery without back-and-forth.
+            </p>
           </div>
-          <div class="proof-grid">
-            <div class="proof">
-              <div class="proof-big">Speed</div>
+
+          <!-- KEY PROMISES -->
+          <div class="cta-band" style="margin-bottom: 1.25rem">
+            <div>
+              <h3>Fast delivery with clear rules.</h3>
               <p>
-                Get answers in minutes, not hours. No more time-consuming
-                spreadsheet building.
+                Delivery timelines start only after your
+                <strong>deposit is confirmed</strong> and we receive
+                <strong>all required content/assets</strong>. Support is
+                available 24/7 via WhatsApp and email.
               </p>
             </div>
-            <div class="proof">
-              <div class="proof-big">Accuracy</div>
-              <p>Industry-standard formulas and calculations you can trust.</p>
+            <div class="cta-band-actions">
+              <a
+                href="mailto:thabethesandile44@gmail.com"
+                class="btn btn-primary"
+                >Email to start</a
+              >
+              <a href="contact.html" class="btn btn-ghost">Request form link</a>
             </div>
-            <div class="proof">
-              <div class="proof-big">Simplicity</div>
-              <p>
-                Intuitive interface. No technical knowledge required. Just input
-                and get results.
+          </div>
+
+          <!-- INDUSTRIES (BIG INDUSTRIES) -->
+          <div class="split" style="margin-bottom: 1.25rem">
+            <div class="split-card">
+              <h3>Industries we build for</h3>
+              <ul class="list">
+                <li>Construction & Building Companies</li>
+                <li>Property / Real Estate Agencies & Developments</li>
+                <li>Logistics, Transport & Fleet Services</li>
+                <li>Security Companies</li>
+                <li>Manufacturing & Industrial Suppliers</li>
+                <li>Mining & Energy Services</li>
+                <li>Automotive Dealerships & Workshops</li>
+              </ul>
+              <p class="sectors-note" style="margin-top: 0.75rem">
+                If your industry isn’t listed, you can still request the intake
+                form.
               </p>
+            </div>
+
+            <div class="split-card">
+              <h3>Standard quality (all packages)</h3>
+              <ul class="list">
+                <li>Premium design (modern, clean, built for trust)</li>
+                <li>Mobile-first layout</li>
+                <li>Fast loading performance</li>
+                <li>Clear CTAs: Call / WhatsApp / Email</li>
+                <li>Contact section + lead capture</li>
+                <li>
+                  Basic SEO setup (titles, descriptions, indexing readiness)
+                </li>
+                <li>Professional deployment (go live properly)</li>
+              </ul>
+            </div>
+
+            <div class="split-card">
+              <h3>Delivery timelines</h3>
+              <ul class="list">
+                <li><strong>Package A (Medium):</strong> 7–11 working days</li>
+                <li>
+                  <strong>Package B (Premium):</strong> 11–15 working days
+                </li>
+              </ul>
+              <p class="sectors-note" style="margin-top: 0.75rem">
+                Working days = Monday–Friday (excluding public holidays).
+                Timelines apply after deposit + complete info/assets are
+                received.
+              </p>
+            </div>
+          </div>
+
+          <!-- IMPORTANT RULES -->
+          <div class="cards" style="margin-bottom: 1.25rem">
+            <div class="card">
+              <h3>No delays rule</h3>
+              <p>
+                We do not start development until your information is complete.
+              </p>
+            </div>
+            <div class="card">
+              <h3>Missing content = timeline pauses</h3>
+              <p>
+                If content/assets are incomplete, delivery timelines pause until
+                everything is received.
+              </p>
+            </div>
+            <div class="card">
+              <h3>Start condition</h3>
+              <p>
+                Work starts after deposit confirmation and once all required
+                content/assets are received.
+              </p>
+            </div>
+          </div>
+
+          <!-- PACKAGES (ONLY 2, WITH PRICES FROM YOUR FORM) -->
+          <div class="section-head" style="margin-top: 0">
+            <h2>Packages</h2>
+            <p>Choose one. Add optional upgrades if needed.</p>
+          </div>
+
+          <div class="split">
+            <div class="split-card">
+              <h3>Package A — Medium</h3>
+              <p class="sectors-note">
+                <strong>Price:</strong> R40 000 - R60 000
+              </p>
+              <ul class="list">
+                <li>Everything in Standard Quality</li>
+                <li>Extra pages as needed (based on your services)</li>
+                <li>Advanced design sections + animations/slideshows</li>
+                <li>Click-to-call links (Phone / WhatsApp / Email / Forms)</li>
+                <li>Improved metadata & SEO foundations</li>
+              </ul>
+              <p class="sectors-note" style="margin-top: 0.75rem">
+                Timeline: <strong>7–11 working days</strong> (after deposit +
+                complete info/assets).
+              </p>
+            </div>
+
+            <div class="split-card">
+              <h3>Package B — Premium</h3>
+              <p class="sectors-note">
+                <strong>Price range:</strong> R70 000 - R90 000
+              </p>
+              <ul class="list">
+                <li>Everything in Medium</li>
+                <li>Custom design & layout system</li>
+                <li>Booking / reservation system</li>
+                <li>E-commerce / payment integration</li>
+                <li>Multi-language support</li>
+                <li>Social media + video integration</li>
+                <li>Blog / news system</li>
+                <li>Advanced SEO setup</li>
+              </ul>
+              <p class="sectors-note" style="margin-top: 0.75rem">
+                Timeline: <strong>11–15 working days</strong> (after deposit +
+                complete info/assets).
+              </p>
+            </div>
+
+            <div class="split-card">
+              <h3>Priority delivery</h3>
+              <p class="sectors-note">
+                <strong>Optional add-on:</strong> R15,000
+              </p>
+              <ul class="list">
+                <li>Priority scheduling (front of queue)</li>
+                <li>Faster turnaround once everything is submitted</li>
+                <li>
+                  Timeline: <strong>7 working days</strong> (Mon–Fri, excluding
+                  public holidays)
+                </li>
+              </ul>
+              <p class="sectors-note" style="margin-top: 0.75rem">
+                Condition: client responds to feedback requests within
+                <strong>24 hours</strong>.
+              </p>
+            </div>
+          </div>
+
+          <!-- OPTIONAL UPGRADES (FROM YOUR FORM WITH VALUES) -->
+          <div class="section-head" style="margin-top: 2rem">
+            <h2>Optional upgrades</h2>
+            <p>
+              Choose upgrades in three categories: Website Functionality,
+              Technical & SEO, and Media & Engagement.
+            </p>
+          </div>
+
+          <div class="cards">
+            <!-- Website Functionality -->
+            <div class="card">
+              <h3>Extra Pages</h3>
+              <p>
+                Showcase every service/product so clients don’t leave without
+                the info.
+              </p>
+            </div>
+            <div class="card">
+              <h3>Custom Dashboard</h3>
+              <p>
+                Update your website yourself instantly, without waiting for a
+                developer.
+              </p>
+            </div>
+            <div class="card">
+              <h3>E-commerce / Payment Integration</h3>
+              <p>Sell online and accept payments directly from your website.</p>
+            </div>
+            <div class="card">
+              <h3>Booking / Reservation System</h3>
+              <p>
+                Customers book instantly. Less back-and-forth, more confirmed
+                bookings.
+              </p>
+            </div>
+
+            <!-- Technical / SEO -->
+            <div class="card">
+              <h3>API Integration</h3>
+              <p>
+                Connect your website with other tools to automate tasks and save
+                hours.
+              </p>
+            </div>
+            <div class="card">
+              <h3>Advanced SEO Package</h3>
+              <p>
+                Stronger Google visibility and more organic leads over time.
+              </p>
+            </div>
+            <div class="card">
+              <h3>Multi-language Support</h3>
+              <p>
+                Serve more customers in more languages and expand your market.
+              </p>
+            </div>
+            <div class="card">
+              <h3>Custom Forms / Lead Generation</h3>
+              <p>
+                Capture leads automatically and route them to email/WhatsApp.
+              </p>
+            </div>
+
+            <!-- Media & Engagement -->
+            <div class="card">
+              <h3>Social Media Integration</h3>
+              <p>
+                Build trust and keep users connected to your brand across
+                platforms.
+              </p>
+            </div>
+            <div class="card">
+              <h3>Video Integration</h3>
+              <p>Increase attention and conversions — proof sells faster.</p>
+            </div>
+          </div>
+
+          <!-- WHAT THE INTAKE FORM REQUIRES -->
+          <div class="section-head" style="margin-top: 2rem">
+            <h2>What the intake form requires</h2>
+            <p>
+              To avoid back-and-forth, prepare these items before requesting the
+              intake form link.
+            </p>
+          </div>
+
+          <div class="split">
+            <div class="split-card">
+              <h3>Client details</h3>
+              <ul class="list">
+                <li>Business name</li>
+                <li>Contact person / role</li>
+                <li>Email address</li>
+                <li>Business address</li>
+                <li>Existing website (if any)</li>
+                <li>Pages needed (Home, About, Services, Contact, etc.)</li>
+                <li>Preferred look & feel / style / colors</li>
+              </ul>
+            </div>
+
+            <div class="split-card">
+              <h3>Project readiness</h3>
+              <ul class="list">
+                <li>Do you have content ready? (Yes/No)</li>
+                <li>Do you have a logo? (Yes/No)</li>
+                <li>Do you want search engines? (Yes/No)</li>
+                <li>Any extra features you want included</li>
+              </ul>
+            </div>
+
+            <div class="split-card">
+              <h3>Files / assets to upload</h3>
+              <ul class="list">
+                <li>Logo files (PNG, SVG, etc.)</li>
+                <li>Images for your website</li>
+                <li>Text/content documents (Word, PDF, Google Doc links)</li>
+                <li>Brand assets (colors, fonts, etc.)</li>
+                <li>Any additional resources you want on your website</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- PAYMENT (FROM YOUR FORM) -->
+          <div class="section-head" style="margin-top: 2rem">
+            <h2>Payment & start</h2>
+            <p>
+              A deposit is required to secure priority delivery and dedicated
+              development time. Work starts after deposit confirmation and
+              complete information/assets are received.
+            </p>
+          </div>
+
+          <div class="split">
+            <div class="split-card">
+              <h3>EFT payment details</h3>
+              <ul class="list">
+                <li><strong>Bank:</strong> Capitec Bank</li>
+                <li><strong>Account Holder:</strong> Mr. S. Thabede</li>
+                <li><strong>Account Number:</strong> 2367216130</li>
+                <li><strong>Branch Code:</strong> 470010</li>
+              </ul>
+              <p class="sectors-note" style="margin-top: 0.75rem">
+                Please send proof of payment via WhatsApp or email after
+                payment.
+              </p>
+            </div>
+
+            <div class="split-card">
+              <h3>Deposit rule</h3>
+              <ul class="list">
+                <li>50% upfront deposit required</li>
+                <li>Project starts after deposit confirmation</li>
+                <li>Remaining balance is due before final delivery</li>
+                <li>
+                  If optional upgrades were selected, total is confirmed via
+                  WhatsApp
+                </li>
+              </ul>
+            </div>
+
+            <div class="split-card">
+              <h3>Start now</h3>
+              <p>
+                Want to start immediately? Email us or use the contact page and
+                request the intake form link. Prepare your assets first to avoid
+                delays.
+              </p>
+              <div
+                style="
+                  display: flex;
+                  gap: 10px;
+                  flex-wrap: wrap;
+                  margin-top: 0.75rem;
+                "
+              >
+                <a
+                  href="mailto:thabethesandile44@gmail.com"
+                  class="btn btn-primary"
+                  >Email to start</a
+                >
+                <a href="contact.html" class="btn btn-ghost"
+                  >Request form link</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- DEMO WEBSITES -->
+      <section class="section" id="demos">
+        <div class="container">
+          <div class="section-head">
+            <h2>Demo websites</h2>
+            <p>
+              Click any demo below to explore purpose-built example websites for
+              different industries.
+            </p>
+          </div>
+
+          <!-- NOTE: ordered from strongest/premium first -->
+          <p
+            class="demo-note"
+            style="
+              text-align: center;
+              margin: 0 auto 1.2rem;
+              max-width: 70ch;
+              opacity: 0.85;
+            "
+          >
+            Ordered from strongest first — we started with the most premium
+            builds to set the standard, then expanded into more industry
+            variations.
+          </p>
+
+          <div class="demo-grid" id="cardsContainer">
+            <a
+              href="https://construction1demo.netlify.app"
+              class="demo-card"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <h3>construction1demo</h3>
+              <p>Live demo • Created Nov 19, 2025</p>
+            </a>
+
+            <a
+              href="https://premiumdemo2.netlify.app"
+              class="demo-card"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <h3>premiumdemo2</h3>
+              <p>Live demo • Created Nov 27, 2025</p>
+            </a>
+
+            <a
+              href="https://construction4demo.netlify.app"
+              class="demo-card"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <h3>construction4demo</h3>
+              <p>Live demo • Created Nov 19, 2025</p>
+            </a>
+
+            <a
+              href="https://multidemo2.netlify.app"
+              class="demo-card"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <h3>multidemo2</h3>
+              <p>Live demo • Created Nov 20, 2025</p>
+            </a>
+
+            <a
+              href="https://construction5demo.netlify.app"
+              class="demo-card"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <h3>construction5demo</h3>
+              <p>Live demo • Created Nov 19, 2025</p>
+            </a>
+
+            <a
+              href="https://multidemo3.netlify.app"
+              class="demo-card"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <h3>multidemo3</h3>
+              <p>Live demo • Created Nov 22, 2025</p>
+            </a>
+
+            <a
+              href="https://premiumdemo3.netlify.app"
+              class="demo-card"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <h3>premiumdemo3</h3>
+              <p>Live demo • Created Nov 22, 2025</p>
+            </a>
+
+            <a
+              href="https://multidemo1.netlify.app"
+              class="demo-card"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <h3>multidemo1</h3>
+              <p>Live demo • Created Nov 20, 2025</p>
+            </a>
+
+            <a
+              href="https://construction2demo.netlify.app"
+              class="demo-card"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <h3>construction2demo</h3>
+              <p>Live demo • Created Nov 19, 2025</p>
+            </a>
+
+            <a
+              href="https://construction3demo.netlify.app"
+              class="demo-card"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <h3>construction3demo</h3>
+              <p>Live demo • Created Nov 17, 2025</p>
+            </a>
+
+            <a
+              href="https://premiumdemo1.netlify.app"
+              class="demo-card"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <h3>premiumdemo1</h3>
+              <p>Live demo • Created Nov 20, 2025</p>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-soft">
+        <div class="container">
+          <div class="cta-band" style="margin-top: 1.4rem">
+            <div>
+              <h3>Want a premium website like these demos?</h3>
+              <p>
+                Email us to start. We’ll send the intake form link so you can
+                submit everything in one go (no back-and-forth).
+              </p>
+            </div>
+            <div class="cta-band-actions">
+              <a
+                href="mailto:thabethesandile44@gmail.com"
+                class="btn btn-primary"
+                >Email to start</a
+              >
+              <a href="#website-service" class="btn btn-ghost"
+                >Website service</a
+              >
             </div>
           </div>
         </div>
       </section>
 
-      <!-- CTA BAND -->
-      <section class="section">
+      <!-- INTAKE PDF DOWNLOAD -->
+      <section class="section section-soft" id="intake-pdf">
         <div class="container">
+          <div class="section-head">
+            <h2>Download the intake PDF</h2>
+            <p>
+              This PDF shows exactly what the form will ask for, so you can
+              prepare everything before requesting the form link.
+            </p>
+          </div>
+
           <div class="cta-band">
             <div>
-              <h3>Trusted by early users and growing weekly.</h3>
+              <h3>Website Development Intake (PDF)</h3>
               <p>
-                Start your free trial and experience the difference clarity
-                makes.
+                Prepare your business details, pages, style preferences, and all
+                files/assets. Then request the form link and we can start
+                immediately after payment confirmation.
               </p>
             </div>
             <div class="cta-band-actions">
-              <a href="signup.html" class="btn btn-primary">Start free trial</a>
-              <a href="contact.html" class="btn btn-ghost">Contact us</a>
+              <!-- IMPORTANT: Replace this with your real PDF path in your project -->
+              <a
+                href="pdf/Sandile SystemsWorks- Required Business Infomartion.pdf"
+                class="btn btn-primary"
+                download
+              >
+                Download PDF
+              </a>
+              <a href="contact.html" class="btn btn-ghost">Request form link</a>
             </div>
           </div>
         </div>
@@ -229,63 +782,111 @@
     <footer class="footer">
       <div class="container">
         <div class="footer-grid">
-          <div>
-            <img
-              src="images/Untitled design.png"
-              alt="Logo"
-              class="brand-logo"
-            />
-            <p class="footer-desc">
-              Premium business decision tools: calculators, dashboards, and SaaS
-              systems built to help businesses move faster.
+          <div class="footer-brand">
+            <div class="footer-logo-row">
+              <img
+                src="images/Untitled design.png"
+                alt="Sandile SystemsWorks"
+                class="brand-logo"
+              />
+              <div>
+                <div class="brand-name">Sandile SystemsWorks</div>
+                <p class="footer-desc">
+                  Premium business decision tools: calculators, dashboards, and
+                  SaaS systems built to help businesses move faster.
+                </p>
+              </div>
+            </div>
+
+            <p class="footer-note">
+              Need a premium website too? We deliver fast, high-converting
+              sites.
+              <a href="#website-service" class="footer-link"
+                >See website service</a
+              >
             </p>
           </div>
+
+          <div class="footer-col">
+            <h4>Pages</h4>
+            <a href="index.html">Home</a>
+            <a href="product.html">Product</a>
+            <a href="features.html">Features</a>
+            <a href="solutions.html">Solutions</a>
+            <a href="pricing.html">Pricing</a>
+            <a href="company.html">Company</a>
+            <a href="contact.html">Contact</a>
+          </div>
+
           <div class="footer-col">
             <h4>Product</h4>
-            <a href="product.html">Features</a>
-            <a href="pricing.html">Pricing</a>
+            <a href="features.html">Features</a>
             <a href="solutions.html">Solutions</a>
+            <a href="pricing.html">Pricing</a>
           </div>
+
           <div class="footer-col">
             <h4>Contact</h4>
-            <a href="mailto:thabethesandile44@gmail.com">Email</a>
-            <a href="tel:+27717378540">Phone</a>
-            <a href="contact.html">Get in touch</a>
+            <a href="mailto:thabethesandile44@gmail.com"
+              >thabethesandile44@gmail.com</a
+            >
+            <a href="tel:0717378540">0717378540</a>
+            <a href="contact.html">Send a message</a>
           </div>
         </div>
+
         <div class="footer-bottom">
           <p>© 2026 Sandile SystemsWorks. All rights reserved.</p>
         </div>
       </div>
     </footer>
 
+    <!-- SCRIPTS -->
     <script>
+      // Mobile nav
       const navToggle = document.getElementById("navToggle");
       const mainNav = document.getElementById("mainNav");
       const navOverlay = document.getElementById("navOverlay");
 
-      navToggle.addEventListener("click", () => {
-        const isOpen = mainNav.classList.toggle("open");
-        navToggle.classList.toggle("open");
-        navOverlay.classList.toggle("active");
-        navToggle.setAttribute("aria-expanded", isOpen);
-      });
+      if (navToggle && mainNav && navOverlay) {
+        navToggle.addEventListener("click", () => {
+          const isOpen = mainNav.classList.toggle("open");
+          navToggle.classList.toggle("open");
+          navOverlay.classList.toggle("active");
+          navToggle.setAttribute("aria-expanded", isOpen);
+        });
 
-      navOverlay.addEventListener("click", () => {
-        mainNav.classList.remove("open");
-        navToggle.classList.remove("open");
-        navOverlay.classList.remove("active");
-        navToggle.setAttribute("aria-expanded", false);
-      });
-
-      mainNav.querySelectorAll("a").forEach((link) => {
-        link.addEventListener("click", () => {
+        navOverlay.addEventListener("click", () => {
           mainNav.classList.remove("open");
           navToggle.classList.remove("open");
           navOverlay.classList.remove("active");
           navToggle.setAttribute("aria-expanded", false);
         });
-      });
+
+        mainNav.querySelectorAll("a").forEach((link) => {
+          link.addEventListener("click", () => {
+            mainNav.classList.remove("open");
+            navToggle.classList.remove("open");
+            navOverlay.classList.remove("active");
+            navToggle.setAttribute("aria-expanded", false);
+          });
+        });
+      }
+
+      // Demo search
+      (function () {
+        const input = document.getElementById("demoSearch");
+        const cards = document.querySelectorAll("#cardsContainer .demo-card");
+        if (!input) return;
+
+        input.addEventListener("input", () => {
+          const value = input.value.toLowerCase().trim();
+          cards.forEach((card) => {
+            const text = card.innerText.toLowerCase();
+            card.style.display = text.includes(value) ? "" : "none";
+          });
+        });
+      })();
     </script>
   </body>
 </html>

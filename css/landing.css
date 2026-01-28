@@ -55,7 +55,9 @@ a {
   margin: 0 auto;
   padding: 0 1rem;
 }
-
+.hero-ctas {
+  justify-content: center;
+}
 /* ================= UTIL ================= */
 .btn {
   display: inline-flex;
@@ -1130,4 +1132,556 @@ details p {
   .lightbox-nav.next {
     right: 10px;
   }
+}
+
+/* ==========================================
+   MOBILE MENU: no gap + premium action buttons
+   Paste ONCE at END of landing.css
+========================================== */
+
+/* header height variable so drawer touches header perfectly */
+:root {
+  --header-h: 72px; /* desktop */
+}
+
+@media (max-width: 860px) {
+  :root {
+    --header-h: 60px; /* adjust to 56/58/62 if needed */
+  }
+
+  /* overlay starts under header */
+  .nav-overlay {
+    top: var(--header-h) !important;
+  }
+
+  /* drawer starts under header */
+  .nav {
+    top: var(--header-h) !important;
+    height: calc(100vh - var(--header-h)) !important;
+  }
+}
+
+/* Mobile actions hidden by default (desktop) */
+.nav-mobile-actions {
+  display: none;
+}
+
+/* Show mobile actions only when menu is OPEN (prevents weird spacing) */
+@media (max-width: 860px) {
+  .header-actions {
+    display: none !important;
+  }
+
+  .nav.open .nav-mobile-actions {
+    display: grid;
+    gap: 10px;
+    padding: 14px 12px;
+    margin-top: 12px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  /* Make "Sign in" smaller + pill-style */
+  .nav.open .nav-mobile-actions .nav-link-muted {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 12px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    background: rgba(255, 255, 255, 0.04);
+    color: var(--text-muted);
+    font-weight: 750;
+    font-size: 0.92rem;
+    letter-spacing: 0.2px;
+    text-decoration: none;
+    transition:
+      border-color 0.2s ease,
+      transform 0.2s ease,
+      color 0.2s ease;
+  }
+
+  .nav.open .nav-mobile-actions .nav-link-muted:hover {
+    color: var(--text-main);
+    border-color: rgba(0, 213, 255, 0.35);
+    transform: translateY(-1px);
+  }
+
+  /* Make "Start free trial" smaller than your main buttons, but still the main CTA */
+  .nav.open .nav-mobile-actions .btn {
+    width: 100%;
+    padding: 10px 12px; /* smaller than default 0.75rem 1.1rem */
+    border-radius: 14px;
+    font-size: 0.95rem; /* smaller text */
+    font-weight: 850;
+    line-height: 1;
+    box-shadow: none; /* cleaner inside menu */
+  }
+
+  /* Give the CTA a subtle glow so it looks special inside the menu */
+  .nav.open .nav-mobile-actions .btn-primary {
+    box-shadow: 0 10px 18px rgba(0, 213, 255, 0.12);
+    border: 1px solid rgba(0, 213, 255, 0.28);
+  }
+}
+
+/* Footer promo note (premium website link) */
+.footer-note {
+  margin-top: 0.95rem;
+  padding: 0.9rem 1rem;
+  border-radius: 14px;
+  background: rgba(0, 213, 255, 0.08);
+  border: 1px solid rgba(0, 213, 255, 0.22);
+  color: var(--text-muted);
+  font-weight: 700;
+  line-height: 1.45;
+}
+
+.footer-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-left: 0.35rem;
+  color: #fff;
+  font-weight: 850;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-color: rgba(0, 213, 255, 0.65);
+  transition:
+    transform 0.2s ease,
+    color 0.2s ease,
+    text-decoration-color 0.2s ease;
+}
+
+.footer-link::after {
+  content: "↗";
+  font-size: 0.95em;
+  opacity: 0.85;
+}
+
+.footer-link:hover {
+  color: var(--accent);
+  text-decoration-color: var(--accent);
+  transform: translateY(-1px);
+}
+
+.footer-link:active {
+  transform: translateY(0);
+}
+
+.footer-link:focus-visible {
+  outline: 2px solid rgba(0, 213, 255, 0.55);
+  outline-offset: 3px;
+  border-radius: 10px;
+}
+
+/* =========================
+   DEMO WEBSITES (Company page)
+========================= */
+.demo-toolbar {
+  max-width: 920px;
+  margin: 0 auto 1.2rem;
+  display: flex;
+  gap: 0.9rem;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.demo-search {
+  flex: 1;
+  min-width: 240px;
+  padding: 0.9rem 1rem;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text-main);
+  outline: none;
+}
+
+.demo-search::placeholder {
+  color: rgba(148, 163, 184, 0.85);
+  font-weight: 650;
+}
+
+.demo-search:focus {
+  border-color: rgba(0, 213, 255, 0.45);
+  box-shadow: 0 0 0 4px rgba(0, 213, 255, 0.1);
+}
+
+.demo-count {
+  color: var(--text-muted);
+  font-weight: 750;
+  font-size: 0.95rem;
+}
+
+.demo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.2rem;
+}
+
+.demo-card {
+  display: block;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  padding: 1.25rem 1.15rem;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.14);
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+.demo-card h3 {
+  font-size: 1.05rem;
+  letter-spacing: -0.2px;
+  color: #fff;
+  margin-bottom: 0.35rem;
+}
+
+.demo-card p {
+  color: var(--text-muted);
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.demo-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(0, 213, 255, 0.35);
+  background: rgba(0, 213, 255, 0.06);
+}
+
+.demo-card:focus-visible {
+  outline: 2px solid rgba(0, 213, 255, 0.55);
+  outline-offset: 4px;
+}
+
+/* Responsive */
+@media (max-width: 980px) {
+  .demo-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================
+   START INSTANTLY (Company page)
+========================= */
+.start-card {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 1.2rem;
+  align-items: start;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(0, 213, 255, 0.22);
+  border-radius: calc(var(--radius) + 4px);
+  padding: 1.4rem 1.25rem;
+  box-shadow: var(--shadow);
+  margin-top: 1.2rem;
+}
+
+.start-left h3 {
+  font-size: 1.15rem;
+  letter-spacing: -0.3px;
+}
+
+.start-sub {
+  color: var(--text-muted);
+  margin-top: 0.4rem;
+  font-weight: 650;
+  max-width: 62ch;
+}
+
+.start-list {
+  list-style: none;
+  margin-top: 0.9rem;
+  display: grid;
+  gap: 0.6rem;
+  color: var(--text-muted);
+  font-weight: 700;
+}
+
+.start-list li {
+  position: relative;
+  padding-left: 1.25rem;
+}
+
+.start-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--accent);
+  font-weight: 950;
+}
+
+.start-actions {
+  display: flex;
+  gap: 0.8rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.start-note {
+  margin-top: 0.85rem;
+  color: rgba(148, 163, 184, 0.92);
+  font-weight: 650;
+  font-size: 0.95rem;
+}
+
+.start-right {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.mini-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius);
+  padding: 1.05rem 1rem;
+}
+
+.mini-card h4 {
+  font-size: 1.02rem;
+  letter-spacing: -0.2px;
+}
+
+.mini-list {
+  list-style: none;
+  margin-top: 0.75rem;
+  display: grid;
+  gap: 0.55rem;
+  color: var(--text-muted);
+  font-weight: 650;
+}
+
+.mini-list li {
+  position: relative;
+  padding-left: 1.1rem;
+}
+
+.mini-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: rgba(0, 213, 255, 0.85);
+  font-weight: 950;
+}
+
+.mini-sub {
+  color: var(--text-muted);
+  margin-top: 0.6rem;
+  font-weight: 650;
+}
+
+.mini-link {
+  display: inline-flex;
+  margin-top: 0.7rem;
+  font-weight: 850;
+  color: var(--accent);
+}
+
+.mini-link:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 980px) {
+  .start-card {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================
+   FOOTER (your exact HTML)
+   Desktop + Mobile
+   Paste at END of landing.css
+========================= */
+
+.footer {
+  padding: 3.2rem 0 1.6rem;
+  border-top: 1px solid var(--border-soft);
+  background: rgba(2, 6, 23, 0.55);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.35fr 0.75fr 0.75fr 0.75fr; /* brand + 3 cols */
+  gap: 1.6rem;
+  align-items: start;
+}
+
+/* Brand block */
+.footer-brand .footer-logo-row {
+  display: flex;
+  gap: 0.85rem;
+  align-items: flex-start;
+}
+
+.footer-brand .brand-logo {
+  height: 44px;
+  width: auto;
+  object-fit: contain;
+  mix-blend-mode: screen; /* matches your theme */
+  flex: 0 0 auto;
+}
+
+.footer-brand .brand-name {
+  font-weight: 900;
+  letter-spacing: 0.2px;
+  line-height: 1.1;
+}
+
+.footer-desc {
+  margin-top: 0.6rem;
+  color: var(--text-muted);
+  max-width: 58ch;
+}
+
+/* Footer note (your existing premium promo styles) */
+.footer-note {
+  margin-top: 1rem;
+  padding: 0.95rem 1rem;
+  border-radius: 14px;
+  background: rgba(0, 213, 255, 0.08);
+  border: 1px solid rgba(0, 213, 255, 0.22);
+  color: var(--text-muted);
+  font-weight: 700;
+  line-height: 1.45;
+}
+
+.footer-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-left: 0.35rem;
+  color: #fff;
+  font-weight: 850;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-color: rgba(0, 213, 255, 0.65);
+  transition:
+    transform 0.2s ease,
+    color 0.2s ease,
+    text-decoration-color 0.2s ease;
+}
+.footer-link::after {
+  content: "↗";
+  font-size: 0.95em;
+  opacity: 0.85;
+}
+.footer-link:hover {
+  color: var(--accent);
+  text-decoration-color: var(--accent);
+  transform: translateY(-1px);
+}
+.footer-link:active {
+  transform: translateY(0);
+}
+.footer-link:focus-visible {
+  outline: 2px solid rgba(0, 213, 255, 0.55);
+  outline-offset: 3px;
+  border-radius: 10px;
+}
+
+/* Columns */
+.footer-col h4 {
+  color: #fff;
+  font-size: 1rem;
+  margin-bottom: 0.8rem;
+  letter-spacing: -0.2px;
+}
+
+.footer-col a {
+  display: block;
+  color: var(--text-muted);
+  font-weight: 650;
+  margin-bottom: 0.55rem;
+  padding: 0.25rem 0; /* makes tap targets nicer */
+  transition: color 0.2s ease;
+}
+
+.footer-col a:hover {
+  color: var(--accent);
+}
+
+.footer-col a:focus-visible {
+  outline: 2px solid rgba(0, 213, 255, 0.45);
+  outline-offset: 3px;
+  border-radius: 10px;
+}
+
+/* Bottom */
+.footer-bottom {
+  margin-top: 2.2rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 980px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr; /* 2 columns */
+    gap: 1.2rem;
+  }
+
+  .footer-brand {
+    grid-column: 1 / -1; /* brand spans full width on tablet */
+  }
+
+  .footer-desc {
+    max-width: 70ch;
+  }
+}
+
+@media (max-width: 560px) {
+  .footer {
+    padding: 2.6rem 0 1.3rem;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr; /* stack */
+    gap: 1.1rem;
+  }
+
+  .footer-brand .footer-logo-row {
+    gap: 0.75rem;
+  }
+
+  .footer-brand .brand-logo {
+    height: 38px;
+  }
+
+  .footer-note {
+    padding: 0.9rem 0.95rem;
+  }
+
+  /* slightly tighter links on mobile */
+  .footer-col a {
+    margin-bottom: 0.45rem;
+    padding: 0.35rem 0;
+  }
+
+  .footer-bottom {
+    margin-top: 1.6rem;
+    padding-top: 1rem;
+  }
+}
+
+/* Center the trustline */
+.trustline {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* centers dot + text */
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
 }

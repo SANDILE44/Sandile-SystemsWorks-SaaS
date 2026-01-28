@@ -19,19 +19,33 @@
             />
             <span class="brand-name">Sandile SystemsWorks</span>
           </div>
+
           <nav class="nav" id="mainNav">
             <a href="index.html">Home</a>
             <a href="product.html">Product</a>
+            <a href="features.html">Features</a>
             <a href="solutions.html">Solutions</a>
-            <a href="pricing.html">Pricing</a>
+            <a href="pricing.html" aria-current="page">Pricing</a>
             <a href="company.html">Company</a>
             <a href="contact.html">Contact</a>
+
+            <div class="nav-mobile-actions">
+              <a href="login.html" class="nav-link-muted">Sign in</a>
+              <a href="signup.html" class="btn btn-primary btn-block"
+                >Start free trial</a
+              >
+            </div>
           </nav>
-          <button class="nav-toggle" id="navToggle" aria-expanded="false">
-            <span></span>
-            <span></span>
-            <span></span>
+
+          <button
+            class="nav-toggle"
+            id="navToggle"
+            aria-expanded="false"
+            aria-label="Toggle menu"
+          >
+            <span></span><span></span><span></span>
           </button>
+
           <div class="header-actions">
             <a href="login.html" class="link-muted">Sign in</a>
             <a href="signup.html" class="btn btn-primary">Start free trial</a>
@@ -49,98 +63,344 @@
         <div class="container">
           <div class="hero-center">
             <p class="eyebrow">PRICING</p>
-            <h1>One plan. Everything included.</h1>
+            <h1>Start on Tier 1. Upgrade when you need more.</h1>
             <p class="subhead">
-              No hidden fees. No surprise charges. Just powerful tools to make
-              better business decisions at a fair monthly rate.
+              Sandile SystemsWorks is built for business owners, managers, and
+              teams who want fast, standardized decision results — without
+              spreadsheets.
             </p>
-          </div>
-        </div>
-      </section>
 
-      <!-- PRICING CARD -->
-      <section class="section">
-        <div class="container">
-          <div class="pricing">
-            <div class="pricing-card">
-              <div class="pricing-top">
-                <h3>Business Access</h3>
-                <p class="pricing-sub">
-                  Everything you need to make smarter decisions
-                </p>
-              </div>
-              <div class="price">
-                <span class="price-amount">R12,499</span>
-                <span class="price-period">/month</span>
-              </div>
-              <a href="signup.html" class="btn btn-primary btn-block"
-                >Start free trial</a
-              >
-              <p class="tiny">3 days free trial. Cancel anytime.</p>
-
-              <div
-                style="
-                  margin-top: 1.8rem;
-                  border-top: 1px solid rgba(255, 255, 255, 0.1);
-                  padding-top: 1.5rem;
-                "
-              >
-                <h4
-                  style="font-weight: 750; margin-bottom: 1rem; font-size: 1rem"
-                >
-                  Everything included:
-                </h4>
-                <ul class="list">
-                  <li>30+ decision calculators</li>
-                  <li>Real-time dashboards</li>
-                  <li>Scenario planning tools</li>
-                  <li>Live chart visualization</li>
-                  <li>Unlimited calculations</li>
-                  <li>Weekly feature updates</li>
-                  <li>Priority email support</li>
-                </ul>
-              </div>
+            <!-- Clear promise line -->
+            <div class="trustline">
+              <span class="dot"></span>
+              ✅ 3 days free trial on Tier 1 (R12,499/month)
             </div>
           </div>
         </div>
       </section>
 
-      <!-- PRICING FAQ -->
-      <section class="section section-soft">
+      <!-- FEATURES (SUMMARY) -->
+      <section class="section section-soft" id="features">
         <div class="container">
           <div class="section-head">
-            <h2>Pricing FAQ</h2>
-            <p>Questions about our plan? We've got answers.</p>
+            <h2>Everything you need to make confident decisions — fast.</h2>
+            <p>
+              Decision calculators, dashboards, and sector coverage built for
+              real workflows. Standardized outputs so you can compare decisions
+              quickly.
+            </p>
           </div>
-          <div class="faq">
-            <details>
-              <summary>Can I cancel anytime?</summary>
-              <p>
-                Yes. There's no long-term contract. You can cancel your
-                subscription anytime, even during your free trial month.
-              </p>
-            </details>
 
-            <details>
-              <summary>Is there a setup or onboarding fee?</summary>
+          <div class="cards">
+            <div class="card">
+              <h3>Sector-based calculators</h3>
               <p>
-                No. Your subscription includes everything—there are no
-                additional setup, onboarding, or hidden fees.
+                Navigate by sector and industry to access calculators that match
+                how businesses actually operate.
               </p>
-            </details>
+            </div>
+
+            <div class="card">
+              <h3>Instant profitability insights</h3>
+              <p>
+                Get Profit/Loss, Margin %, ROI %, Cost Ratio, and Break-even —
+                instantly.
+              </p>
+            </div>
+
+            <div class="card">
+              <h3>Advanced metrics & projections</h3>
+              <p>
+                Deeper visibility like profit per cost category plus monthly and
+                annual projections for planning.
+              </p>
+            </div>
+
+            <div class="card">
+              <h3>Guided workflow</h3>
+              <p>
+                Simple inputs → clear outputs. Designed so you can act without
+                needing finance expertise.
+              </p>
+            </div>
+
+            <div class="card">
+              <h3>Standardized outputs</h3>
+              <p>
+                A consistent layout across calculators helps teams compare
+                decisions faster.
+              </p>
+            </div>
+
+            <div class="card">
+              <h3>Secure access control</h3>
+              <p>
+                Login + subscription access control so your product stays
+                premium and protected.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CALCULATOR TYPES -->
+      <section class="section" id="decision-types">
+        <div class="container">
+          <div class="section-head">
+            <h2>Decision calculators you’re building</h2>
+            <p>
+              SystemsWorks supports these decision types across sectors. Exact
+              calculator sets vary by industry and role.
+            </p>
+          </div>
+
+          <div class="split">
+            <div class="split-card">
+              <h3>Pricing decisions</h3>
+              <ul class="list">
+                <li>Target margin pricing</li>
+                <li>Cost-to-price planning</li>
+                <li>Service & product pricing</li>
+              </ul>
+            </div>
+
+            <div class="split-card">
+              <h3>Profit analysis</h3>
+              <ul class="list">
+                <li>Project profitability</li>
+                <li>Service margin analysis</li>
+                <li>Cost ratio + break-even</li>
+              </ul>
+            </div>
+
+            <div class="split-card">
+              <h3>ROI planning</h3>
+              <ul class="list">
+                <li>ROI % evaluation</li>
+                <li>Investment comparisons</li>
+                <li>Projection-based decisions</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- INDUSTRY COVERAGE -->
+      <section class="section section-soft" id="coverage">
+        <div class="container">
+          <div class="section-head">
+            <h2>Industries & sectors supported</h2>
+            <p>
+              Coverage is broad by design — specific calculator sets may vary by
+              role and use case.
+            </p>
+          </div>
+
+          <div class="split">
+            <div class="split-card">
+              <h3>Primary Sector</h3>
+              <ul class="list">
+                <li>Agriculture</li>
+                <li>Forestry</li>
+                <li>Fishing</li>
+                <li>Mining</li>
+                <li>Oil & Gas</li>
+                <li>Renewable Energy</li>
+              </ul>
+            </div>
+
+            <div class="split-card">
+              <h3>Secondary Sector</h3>
+              <ul class="list">
+                <li>Manufacturing</li>
+                <li>Construction</li>
+                <li>Automotive</li>
+                <li>Electronics</li>
+                <li>Textiles</li>
+                <li>Food & Beverage</li>
+              </ul>
+            </div>
+
+            <div class="split-card">
+              <h3>Tertiary Sector</h3>
+              <ul class="list">
+                <li>Real Estate</li>
+                <li>Retail</li>
+                <li>Restaurants</li>
+                <li>Hospitality</li>
+                <li>Logistics</li>
+                <li>Healthcare</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="split" style="margin-top: 1.2rem">
+            <div class="split-card">
+              <h3>Education & Finance</h3>
+              <ul class="list">
+                <li>Education</li>
+                <li>Finance</li>
+                <li>Marketing</li>
+                <li>Consulting</li>
+              </ul>
+            </div>
+
+            <div class="split-card">
+              <h3>Quaternary Sector</h3>
+              <ul class="list">
+                <li>Software</li>
+                <li>SaaS</li>
+                <li>IT Services</li>
+                <li>Media</li>
+                <li>R&D</li>
+                <li>Telecommunications</li>
+              </ul>
+            </div>
+
+            <div class="split-card">
+              <h3>Quinary Sector</h3>
+              <ul class="list">
+                <li>Government</li>
+                <li>NGOs</li>
+                <li>Social & Community Services</li>
+                <li>Public Administration</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PLANS -->
+      <section class="section" id="plans">
+        <div class="container">
+          <div class="section-head">
+            <h2>Plans & features</h2>
+            <p>
+              Start with a 3-day free trial. Upgrade when you need workflows or
+              team controls.
+            </p>
+          </div>
+
+          <div class="split">
+            <!-- AVAILABLE NOW -->
+            <div
+              class="split-card"
+              style="border-color: rgba(0, 213, 255, 0.22)"
+            >
+              <p class="eyebrow" style="margin-bottom: 0.6rem">AVAILABLE NOW</p>
+              <h3>Business Access</h3>
+              <p
+                style="
+                  color: var(--text-muted);
+                  font-weight: 650;
+                  margin-top: 0.35rem;
+                "
+              >
+                Full calculator access + dashboards
+              </p>
+
+              <div class="price" style="margin: 1rem 0 0.9rem">
+                <span class="price-amount">R12,499</span>
+                <span class="price-period">/month</span>
+              </div>
+
+              <a href="signup.html" class="btn btn-primary btn-block"
+                >Start free trial</a
+              >
+              <p class="tiny">✅ 3 days free trial. Cancel anytime.</p>
+
+              <ul class="list" style="margin-top: 1rem">
+                <li>Sector dashboard (pick sector → industry)</li>
+                <li>Industry calculators (e.g. construction costing)</li>
+                <li>Profit/Loss + Margin % + ROI %</li>
+                <li>Cost ratio + Break-even</li>
+                <li>Advanced metrics + projections</li>
+                <li>Standardized outputs across tools</li>
+                <li>Secure login + subscription access</li>
+              </ul>
+            </div>
+
+            <!-- COMING SOON -->
+            <div class="split-card">
+              <p class="eyebrow" style="margin-bottom: 0.6rem; opacity: 0.9">
+                COMING SOON
+              </p>
+              <h3>Pro Tier</h3>
+              <p
+                style="
+                  color: var(--text-muted);
+                  font-weight: 650;
+                  margin-top: 0.35rem;
+                "
+              >
+                Save work + export + scenario planning
+              </p>
+
+              <div class="price" style="margin: 1rem 0 0.9rem">
+                <span class="price-amount">R22,499</span>
+                <span class="price-period">/month</span>
+              </div>
+
+              <ul class="list" style="margin-top: 0.2rem">
+                <li>Save projects</li>
+                <li>Project history</li>
+                <li>Defaults / templates</li>
+                <li>Scenario comparisons</li>
+                <li>Export to PDF</li>
+                <li>Export to Excel / CSV</li>
+              </ul>
+
+              <p class="tiny" style="margin-top: 1rem">
+                Pro is a roadmap tier. Tier 1 is available today.
+              </p>
+            </div>
+
+            <!-- COMING SOON -->
+            <div class="split-card">
+              <p class="eyebrow" style="margin-bottom: 0.6rem; opacity: 0.9">
+                COMING SOON
+              </p>
+              <h3>Business / Team</h3>
+              <p
+                style="
+                  color: var(--text-muted);
+                  font-weight: 650;
+                  margin-top: 0.35rem;
+                "
+              >
+                Multi-user + roles + company workspace
+              </p>
+
+              <div class="price" style="margin: 1rem 0 0.9rem">
+                <span class="price-amount">R34,499</span>
+                <span class="price-period">/month</span>
+              </div>
+
+              <ul class="list" style="margin-top: 0.2rem">
+                <li>Multiple users</li>
+                <li>Roles & permissions</li>
+                <li>Shared company workspace</li>
+                <li>Audit logs</li>
+                <li>Priority support</li>
+              </ul>
+
+              <p class="tiny" style="margin-top: 1rem">
+                Pro and Business/Team are roadmap features.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
       <!-- CTA BAND -->
-      <section class="section">
+      <section class="section section-soft">
         <div class="container">
           <div class="cta-band">
             <div>
-              <h3>Try Sandile SystemsWorks free for 3 days.</h3>
+              <h3>Ready to test it?</h3>
               <p>
-                Get full access to all calculators and dashboards. No credit
-                card required to start.
+                Start your 3-day free trial and explore the calculators and
+                dashboards.
               </p>
             </div>
             <div class="cta-band-actions">
@@ -152,34 +412,60 @@
       </section>
     </main>
 
-    <!-- FOOTER -->
+    <!-- FOOTER (keep your exact structure) -->
     <footer class="footer">
       <div class="container">
         <div class="footer-grid">
-          <div>
-            <img
-              src="images/Untitled design.png"
-              alt="Logo"
-              class="brand-logo"
-            />
-            <p class="footer-desc">
-              Premium business decision tools: calculators, dashboards, and SaaS
-              systems built to help businesses move faster.
+          <div class="footer-brand">
+            <div class="footer-logo-row">
+              <img
+                src="images/Untitled design.png"
+                alt="Sandile SystemsWorks"
+                class="brand-logo"
+              />
+              <div>
+                <div class="brand-name">Sandile SystemsWorks</div>
+                <p class="footer-desc">
+                  Premium business decision tools: calculators, dashboards, and
+                  SaaS systems built to help businesses move faster.
+                </p>
+              </div>
+            </div>
+
+            <p class="footer-note">
+              Need a premium website too? We build high-converting sites.
+              <a href="company.html" class="footer-link">See our work</a>
             </p>
           </div>
+
+          <div class="footer-col">
+            <h4>Pages</h4>
+            <a href="index.html">Home</a>
+            <a href="product.html">Product</a>
+            <a href="features.html">Features</a>
+            <a href="solutions.html">Solutions</a>
+            <a href="pricing.html">Pricing</a>
+            <a href="company.html">Company</a>
+            <a href="contact.html">Contact</a>
+          </div>
+
           <div class="footer-col">
             <h4>Product</h4>
-            <a href="product.html">Features</a>
-            <a href="pricing.html">Pricing</a>
+            <a href="features.html">Features</a>
             <a href="solutions.html">Solutions</a>
+            <a href="pricing.html">Pricing</a>
           </div>
+
           <div class="footer-col">
             <h4>Contact</h4>
-            <a href="mailto:thabethesandile44@gmail.com">Email</a>
-            <a href="tel:+27717378540">Phone</a>
-            <a href="contact.html">Get in touch</a>
+            <a href="mailto:thabethesandile44@gmail.com"
+              >thabethesandile44@gmail.com</a
+            >
+            <a href="tel:0717378540">0717378540</a>
+            <a href="contact.html">Send a message</a>
           </div>
         </div>
+
         <div class="footer-bottom">
           <p>© 2026 Sandile SystemsWorks. All rights reserved.</p>
         </div>

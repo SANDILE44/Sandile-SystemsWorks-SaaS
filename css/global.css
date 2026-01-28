@@ -1,0 +1,173 @@
+/* ===== GLOBAL RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #0f172a;
+  color: #e5e7eb;
+  line-height: 1.6;
+}
+
+/* ===== HEADER ===== */
+header {
+  text-align: center;
+  padding: 50px 20px;
+  background: linear-gradient(135deg, #020617, #1e293b);
+}
+
+header img {
+  height: 60px;
+  width: auto;
+  mix-blend-mode: screen;
+  margin-bottom: 15px;
+}
+
+header h1 {
+  font-size: 32px;
+  margin-bottom: 10px;
+  color: #38bdf8;
+}
+
+header p {
+  color: #94a3b8;
+  max-width: 800px;
+  margin: auto;
+  font-size: 16px;
+}
+
+/* ===== SEARCH BAR ===== */
+.search-section {
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+.search-section input {
+  width: 100%;
+  padding: 14px 15px;
+  border-radius: 10px;
+  border: 1px solid #1e293b;
+  background: #020617;
+  color: #e5e7eb;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.search-section input:focus {
+  outline: none;
+  border-color: #38bdf8;
+  box-shadow: 0 0 8px rgba(56, 189, 248, 0.5);
+}
+
+/* ===== CARDS CONTAINER ===== */
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  max-width: 1100px;
+  margin: 50px auto;
+  padding: 0 20px;
+}
+
+/* ===== INDIVIDUAL CARDS ===== */
+.card {
+  background: #020617;
+  border: 1px solid #1e293b;
+  border-radius: 12px;
+  padding: 25px;
+  text-decoration: none;
+  color: #e5e7eb;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card h2 {
+  color: #38bdf8;
+  margin-bottom: 12px;
+  font-size: 20px;
+}
+
+.card p {
+  font-size: 14px;
+  color: #cbd5e1;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* ===== CALCULATORS / FORMS ===== */
+.calculator {
+  background: #020617;
+  border: 1px solid #1e293b;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.calculator h2 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: #38bdf8;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: #94a3b8;
+}
+
+input, select {
+  width: 100%;
+  padding: 8px;
+  margin-top: 4px;
+  border-radius: 6px;
+  border: none;
+  background: #0f172a;
+  color: #e5e7eb;
+}
+
+.output {
+  margin-top: 12px;
+  font-weight: bold;
+  color: #22c55e;
+  font-size: 16px;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 13px;
+  color: #94a3b8;
+  border-top: 1px solid #1e293b;
+  margin-top: 50px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media screen and (max-width: 600px) {
+  header h1 {
+    font-size: 24px;
+  }
+
+  header p {
+    font-size: 14px;
+  }
+
+  .cards-container {
+    gap: 15px;
+  }
+
+  .card h2 {
+    font-size: 18px;
+  }
+
+  .calculator h2 {
+    font-size: 16px;
+  }
+}
